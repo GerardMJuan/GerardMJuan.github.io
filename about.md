@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+Hi! My name is Gerard, and I am a PhD student at [Universitat Pompeu Fabra](https://www.upf.edu/), working on computational and machine learning methods to study Alzheimer's Disease. This is the about page of my personal blog. Some day I will finish updating it with things about me.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[gerard.marti@upf.edu](mailto:gerard.marti@upf.edu)
