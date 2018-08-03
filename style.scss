@@ -96,6 +96,20 @@ ol ul, ul ol, ul ul, ol ol {
 
 ul ul, ol ul {
   list-style-type: circle;
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+}
+
+ul {
+	position: relative;
+	left: 0%;
+	width: 75%;
+	margin-bottom: 1.5em;
+	margin-top: 1em;
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
 }
 
 em, i {
@@ -108,6 +122,13 @@ strong, b {
 
 img {
   max-width: 100%;
+}
+
+code {
+	font: normal normal;
+	font-size: 90%;
+	font-family: $helveticaNeue;
+	color: #aaa;
 }
 
 // Fixes images in popup boxes from Google Translate

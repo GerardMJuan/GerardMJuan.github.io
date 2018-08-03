@@ -1,9 +1,11 @@
 ---
 layout: post
-title:  BrainFortLib: Neuroimaging scripts hub
+title: BrainFortLib - Neuroimaging scripts hub
 ---
 
-Processing images and scans of the brain has been a big part of my PhD activity. When I started, I had never worked with brain images before, neither with neuroimaging tools and libraries. I was given a set of scripts that my supervisor had used for processing brain images, but apart from that I had no other support: nobody else in my department worked on brain imaging. Over time, I developed many other scripts and pipelines, and adapting existing ones to my needs. All those scripts are now gathered in a single Github repository, [BrainFortLib](https://github.com/GerardMJuan/BrainFortLib-neuroimage-hub).
+Processing images and scans of the brain has been a big part of my PhD activity. When I started, I had never worked with brain images before, neither with neuroimaging tools and libraries. I was given a set of scripts that my supervisor had used for processing brain images, but apart from that I had no other support: nobody else in my department worked on brain imaging.
+
+Over time, I developed many other scripts and pipelines, and adapting existing ones to my needs. All those scripts are now gathered in a single Github repository, [BrainFortLib](https://github.com/GerardMJuan/BrainFortLib-neuroimage-hub).
 
 My idea behind this repository is that other people can find the scripts useful, either for direct use or as examples to create their own. At least, they are more useful here that in an old, dark, folder in my workstation. Also, it can be really useful for any future PhD students in my group starting on this topic.
 
