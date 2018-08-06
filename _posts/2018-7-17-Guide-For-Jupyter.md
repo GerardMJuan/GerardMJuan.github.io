@@ -3,7 +3,9 @@ layout: post
 title:
 ---
 
-In this small blog post I will detail how to use [Jupyter](https://jupyter.org/) applications (notebooks and JupyterLab) from a computing node in a HPC. This post is a follow-up to [the previous post](2018-7-16-Guide-For-Conda-Environment.md), so I will assume that you already have defined a custom Python environment. If that is not the case, you will need to install on your own the Jupyter package, but the general procedure still applies.
+In this small blog post I will detail how to use [Jupyter](https://jupyter.org/) applications (notebooks and JupyterLab) from a computing node in a HPC. This post is a follow-up to [the previous post](2018-7-16-Guide-For-Conda-Environment.md).  
+
+I will assume that you already have defined a custom Python environment. If that is not the case, you will need to install on your own the Jupyter package, but the general procedure still applies.
 
 Jupyter notebooks are really useful because of their interactivity, learning, and to help with experiment reproducibility. I wanted to use Jupyter with the HPC computing module, to run programs interactively on the cluster using all the capabilities of the Jupyter Notebooks. This small guide is specific for the [UPF cluster](https://guiesbibtic.upf.edu/recerca/hpc/home), but it could be applied to any HPC environment with minor changes.
 

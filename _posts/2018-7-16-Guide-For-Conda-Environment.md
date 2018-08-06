@@ -3,7 +3,9 @@ layout: post
 title: Creation of a custom Python environment in the UPF HPC environment
 ---
 
-One of the most important aspects of a machine learning related PhD is the large computing power needed for the experiments. Normally, in research centers and universities, this is solved by the availability of a cluster infrastructure with large computing capabilities, accessible by every researcher. During my PhD, I have spent countless hours battling with the [High Performance Computing (HPC)](https://guiesbibtic.upf.edu/recerca/hpc/home) unit of my university, Universitat Pompeu Fabra.
+One of the most important aspects of a machine learning related PhD is the large computing power needed for the experiments. Normally, in research centers and universities, this is solved by the availability of a cluster infrastructure with large computing capabilities, accessible by every researcher.
+
+During my PhD, I have spent countless hours battling with the [High Performance Computing (HPC)](https://guiesbibtic.upf.edu/recerca/hpc/home) unit of my university, Universitat Pompeu Fabra.
 
 My initial lack of knowledge on this kind of infrastructure, the large amount of bugs found (including one that rendered half of the folders in my directory inaccessible, that was fun) and the lack of documentation for some of the options transformed seemingly easy tasks into huge timesinks, something that as a PhD student I want to avoid as much as possible. We have enough things to worry about as it is.
 

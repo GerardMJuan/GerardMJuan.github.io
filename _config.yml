@@ -3,17 +3,13 @@
 #
 
 # Name of your site (displayed in the header)
-name: Gerard M.
+name: Gerard Martí
 
 # Short bio or description (displayed in the header)
-description: PhD Student at UPF
+description: PhD Student at Universitat Pompeu Fabra.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://avatars2.githubusercontent.com/u/3297549?s=400&u=b548db302788e3c445881e6e86972a263e1c3460&v=4
-
-#
-# Flags below are optional
-#
+avatar: /images/profile.jpg
 
 # Includes an icon in the footer for each username you enter
 footer-links:
@@ -21,7 +17,7 @@ footer-links:
   email: gerard.marti@upf.edu
   facebook:
   flickr:
-  github: https://github.com/GerardMJuan
+  github: GerardMJuan
   instagram:
   linkedin:
   pinterest:
