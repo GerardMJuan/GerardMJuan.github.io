@@ -1,6 +1,6 @@
 ---
 layout: post
-title:
+title: Guide to use Jupyter in an HPC environment
 ---
 
 In this small blog post I will detail how to use [Jupyter](https://jupyter.org/) applications (notebooks and JupyterLab) from a computing node in a HPC. This post is a follow-up to [the previous post](2018-7-16-Guide-For-Conda-Environment.md).  
