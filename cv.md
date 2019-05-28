@@ -7,8 +7,6 @@ permalink: /cv/
 # Gerard Martí Juan
 PhD Candidate. Machine learning, neurodegenerative diseases.
 
-[Download this CV in .pdf format]()
-
 <div id="webaddress">
 <a href="mailto:gerard.marti@upf.edu">gerard.marti@upf.edu</a>
 |
@@ -19,7 +17,7 @@ PhD Candidate. Machine learning, neurodegenerative diseases.
 
 ## Currently
 
-I'm a second year PhD candidate at [Universitat Pompeu Fabra](upf.edu), at the [SIMBIOsys](https://www.upf.edu/web/simbiosys/) research group. My research is focused on applying machine learning, data science and statistical methods to study Alzheimer's Disease, integrating heterogeneous, longitudinal medical data.
+I'm a third year PhD candidate at [Universitat Pompeu Fabra](upf.edu), at the [SIMBIOsys](https://www.upf.edu/web/simbiosys/) research group. My research is focused on applying machine learning, data science and statistical methods to study Alzheimer's Disease, integrating heterogeneous, longitudinal medical data.
 
 ## Employment
 
@@ -39,8 +37,8 @@ __Universitat Politècnica de Catalunya__ BSc in Computer Engineering. Bsc Thesi
 
 ## Presentations
 
-`2018`
-Deep Learning reading group (_Universitat Pompeu Fabra_)
+`2018-2019`
+Deep Learning reading group, various participations (_Universitat Pompeu Fabra_)
 
 `2017`
 PhD Thesis proposal "Longitudinal modelling of neurodegenerative disease progression using machine learning techniques" (_Universitat Pompeu Fabra_)
@@ -48,20 +46,34 @@ PhD Thesis proposal "Longitudinal modelling of neurodegenerative disease progres
 `2016`
 Multimodal Person Discovery in Broadcast TV (_MediaEval 2016, Amsterdam_). Available [here](https://www.slideshare.net/multimediaeval/mediaeval-2016-upc-system-for-the-2016-mediaeval-multimodal-person-discovery-in-broadcast-tv-task)
 
-<!--
-### Talks
-`2015`
-EdinbR: The Edinburgh R usergroup (_various_)
+## Teaching
 
-MRC IGMM research seminars and section meetings (_various_)
+`2019`
 
-`2014`
-Unravelling higher order chromatin structure (_4<sup>th</sup> Edinburgh Bioinformatics meeting_, Edinburgh, UK)
+Biomedical Image Analysis, Degree in Biomedical Engineering. Laboratory sessions (_Universitat Pompeu Fabra_)
 
-blogR: pop data analysis and R for the web (_Psychology R-users_, Edinburgh, UK)
--->
+Computational Techniques in Biomedicine II, Degree in Biomedical Engineering. Laboratory sessions (_Universitat Pompeu Fabra_)
 
-### Posters
+Statistics, Department of Communication and Information Technologies. Laboratory and seminar sessions (_Universitat Pompeu Fabra_)
+
+`2018`
+
+Biomedical Image Analysis, Degree in Biomedical Engineering. Laboratory sessions (_Universitat Pompeu Fabra_)
+
+Computational Techniques in Biomedicine II, Degree in Biomedical Engineering. Laboratory sessions (_Universitat Pompeu Fabra_)
+
+`2017`
+
+Computer Organization, Department of Communication and Information Technologies. Laboratory and seminar sessions (_Universitat Pompeu Fabra_)
+
+## Posters
+
+`2019`
+
+Multivariate non-linear analysis of ApoE4 allele effect on hippocampal surface morphology in healthy individuals
+ _DTIC workshop_ (Barcelona, ES)
+
+Heterogeneity of longitudinal brain imaging phenotypes in Alzheimer's disease based on unsupervised clustering of blood marker profiles _Computer Assisted Radiology and Surgery (CARS)_ (Rennes, FR)
 
 `2018`
 Data driven clustering for Alzheimer's disease subtyping characterization _DTIC workshop_ (Barcelona, ES)
@@ -75,12 +87,13 @@ Face verification in video sequence annotation using convolutional neural networ
 
 ## Publications
 
-<!-- ### Journals
-`2017`
-Peluso S, Douglas A, Hill A, De Angelis C, __Moore BL__ _et al._ Fibroblast growth factors (FGFs) prime the limb specific Shh enhancer for chromatin changes that balance histone acetylation mediated by E26 transformation-specific (ETS) factors. _eLife_, 6: e28590.
+`2019`
 
-Eberle MA, Fritzilas E, Krusche P, Källberg M, __Moore BL__ _et al._ A reference data set of 5.4 million phased human variants validated by genetic inheritance from sequencing a three-generation 17-member pedigree. _Genome Research_, 27:157-164.
- -->
+Martí-Juan G, Sanroma G, Piella G. Revealing heterogeneity of brain imaging phenotypes in Alzheimer’s disease based on unsupervised clustering of blood marker profiles. _PLoS One_. 2019;14(3). DOI: https://doi.org/10.1371/journal.pone.0211121
+
+Martí-Juan G, Sanroma G, Piella G. Machine learning for longitudinal analysis of neuroimaging data in Alzheimer's Disease: a review _[Under review]_
+
+
  `2017`
 Nam Le, Hervé Bredin, Gabriel Sargent, Miquel India, Paula Lopez-Otero, Claude Barras, Camille Guinaudeau, Guillaume Gravier, Gabriel Barbosa da Fonseca, Izabela Lyon Freire, Zenilton Patrocínio, Jr, Silvio Jamil F. Guimarães, __Gerard Martí__, Josep Ramon Morros, Javier Hernando, Laura Docio-Fernandez, Carmen Garcia-Mateo, Sylvain Meignier, and Jean-Marc Odobez. 2017. Towards large scale multimedia indexing: A case study on person discovery in broadcast news. In Proceedings of the _15th International Workshop on Content-Based Multimedia Indexing (CBMI '17)_. ACM, New York, NY, USA, Article 18, 6 pages. DOI: https://doi.org/10.1145/3095713.3095732
 
@@ -93,12 +106,14 @@ India M, __Martí G__, Cotillas C, Bouritsas G, Sayrol E, Morros JR, _et al_. UP
 * Python
 * C++
 * Java
+* Matlab
 * LaTeX
 * Bash
 * Git
-* Cluster computing
+* Cluster computing (HPC)
 * Tensorflow
 * Keras
+* Pytorch
 
 ## Areas of expertise
 
@@ -106,11 +121,10 @@ India M, __Martí G__, Cotillas C, Bouritsas G, Sayrol E, Morros JR, _et al_. UP
 * Statistics
 * Machine learning
 * Data visualisation
-* Software development
 
 ## Projects
 
-I have a [personal GitHub account](https://github.com/GerardMJuan) where I post project, code and implementations of interesting papers that are relevant to my PhD. I also try to maintain a small blog at [blm.io](http://gerardmjuan.github.io), with introduction to side-projects, solutions to problem I run across during my PhD, and general coding tips.
+I have a [personal GitHub account](https://github.com/GerardMJuan) where I post project, code and implementations of interesting papers and projects relevant to my research. I also try to maintain a small blog at [gerardmjuan.github.io](http://gerardmjuan.github.io), with introduction to side-projects, solutions to problems I run across during my PhD, and general coding tips.
 
 ## Links
 <!-- fa are fontawesome, ai are academicons -->
