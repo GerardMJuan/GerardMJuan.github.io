@@ -76,12 +76,15 @@ Multivariate non-linear analysis of ApoE4 allele effect on hippocampal surface m
 Heterogeneity of longitudinal brain imaging phenotypes in Alzheimer's disease based on unsupervised clustering of blood marker profiles _Computer Assisted Radiology and Surgery (CARS)_ (Rennes, FR)
 
 `2018`
+
 Data driven clustering for Alzheimer's disease subtyping characterization _DTIC workshop_ (Barcelona, ES)
 
 `2017`
+
  _DTIC workshop_ (Barcelona, ES)
 
 `2016`
+
 Face verification in video sequence annotation using convolutional neural networks _MediaEval_ (Amsterdam, NL)
 
 
@@ -95,9 +98,11 @@ Martí-Juan G, Sanroma G, Piella G. Machine learning for longitudinal analysis o
 
 
  `2017`
+
 Nam Le, Hervé Bredin, Gabriel Sargent, Miquel India, Paula Lopez-Otero, Claude Barras, Camille Guinaudeau, Guillaume Gravier, Gabriel Barbosa da Fonseca, Izabela Lyon Freire, Zenilton Patrocínio, Jr, Silvio Jamil F. Guimarães, __Gerard Martí__, Josep Ramon Morros, Javier Hernando, Laura Docio-Fernandez, Carmen Garcia-Mateo, Sylvain Meignier, and Jean-Marc Odobez. 2017. Towards large scale multimedia indexing: A case study on person discovery in broadcast news. In Proceedings of the _15th International Workshop on Content-Based Multimedia Indexing (CBMI '17)_. ACM, New York, NY, USA, Article 18, 6 pages. DOI: https://doi.org/10.1145/3095713.3095732
 
  `2016`
+
 India M, __Martí G__, Cotillas C, Bouritsas G, Sayrol E, Morros JR, _et al_. UPC System for the 2016 MediaEval Multimodal Person Discovery in Broadcast TV task. In _MediaEval 2016 Workshop_. Hilversum, The Netherlands; 2016.  Available at: https://upcommons.upc.edu/handle/2117/101709
 
 ## Technical skills
