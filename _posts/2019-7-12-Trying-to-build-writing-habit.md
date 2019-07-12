@@ -5,11 +5,12 @@ title: Revive - Trying to build a writing habit
 
 So, a year ago I started this blog. My initial idea was for this blog to act as a hub of sorts for all my research projects, side-projects and random thoughts related to my research, and to learn more about Github, Jekyll and Markdown. I started well, posting some interesting things, and then... nothing. A combination of work, prioritizing other things, and lack of a writing habit made me abandon this project. Lately, I was on an interesting international conference (Computed Assisted Radiology and Surgery, [CARS](https://www.cars-int.org)), and when assisting to the various talks there, I thought about how awesome would it be to write something about the conference on my blog after coming back home.
 
+<center>
 <figure>
   <img src="{{site.url}}/images/2019-7-12-rennes.jpg" alt="Rennes"/>
-  <figcaption>The streets of Rennes, where CARS was held. Cool city!</figcaption>
+  <figcaption><sup>The streets of Rennes, where CARS was held. Cool city!</sup></figcaption>
 </figure>
-
+</center>
 Yeah well, short story, I didn't. 
 
 I found that I lacked the motivation to do it, and when I tried to start writing, the only thing I got was a bland and impersonal summary of the talks. I didn't like what I was writing, I felt like a robot that was just parroting the things that were told in the conference, so I just stopped. But the idea of trying to write again something meaningful in my blog had already started occupying my thoughts again.
@@ -20,9 +21,10 @@ So, moving on, I would like to start writing more regularly here. I don't really
 
 So, I will write about research projects or subprojects of my PhD, about conferences or talks that I find interesting (Something about CARS, maybe), or any other things that. I want to limit this to just research related stuff, but if I manage to write about things regularly some posts with absurd, minor things (like a Python trick I learned or why the position of the windows in my office makes it impossible to work past 5 PM) are bound to happen. It's okay, I guess. As I said, doubt that many people will be reading. If you are on the other side, hi! 
 
+<center>
 <figure>
   <img src="https://imgs.xkcd.com/comics/time_management.png" alt="xkcd"/>
-  <figcaption>Somewhat related xkcd.</figcaption>
+  <figcaption><sup>Somewhat related xkcd.</sup></figcaption>
 </figure>
-
+</center>
 I hope I can keep it up. Time will tell. And if not, I can just try again. Not that big of a deal.
