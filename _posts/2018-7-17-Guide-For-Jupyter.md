@@ -33,11 +33,10 @@ We assume that Jupyter is already installed in this environment (and, if you cre
 
 ```
 pip install jupyter
-
 ```
 And now we execute the order. This command is a bit more complicated:
-```
 
+```
 export XDG_RUNTIME_DIR=""
 jupyter notebook --ip $(ip addr show eth0 | grep 'inet ' | awk '{print $2}' | cut -d/ -f1) --no-browser
 ```
