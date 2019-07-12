@@ -26,7 +26,8 @@ So, I will write about research projects or subprojects of my PhD, about confere
 <center>
 <figure>
   <img src="https://imgs.xkcd.com/comics/time_management.png" alt="xkcd"/>
-  <figcaption><sup>Somewhat related dfdfxkcd.</sup></figcaption>
+    <font size="-2">Somewhat related xkcd.</font>
 </figure>
 </center>
+
 I hope I can keep it up. Time will tell. And if not, I can just try again. Not that big of a deal.
