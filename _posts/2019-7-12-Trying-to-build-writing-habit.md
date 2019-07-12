@@ -10,7 +10,7 @@ Last month, I was on an interesting international conference (Computed Assisted 
 <center>
 <figure>
   <img src="{{site.url}}/images/2019-7-12-rennes.jpg" alt="Rennes"/>
-  <sup><figcaption>The streets of Rennes, where CARS was held. Cool city!</figcaption></sup>
+  <small>The streets of Rennes, where CARS was held. Cool city!</small>
 </figure>
 </center>
 Yeah well, short story, I didn't. 
