@@ -3,7 +3,9 @@ layout: post
 title: Revive - Trying to build a writing habit
 ---
 
-So, a year ago I started this blog. My initial idea was for this blog to act as a hub of sorts for all my research projects, side-projects and random thoughts related to my research, and to learn more about Github, Jekyll and Markdown. I started well, posting some interesting things, and then... nothing. A combination of work, prioritizing other things, and lack of a writing habit made me abandon this project. Lately, I was on an interesting international conference (Computed Assisted Radiology and Surgery, [CARS](https://www.cars-int.org)), and when assisting to the various talks there, I thought about how awesome would it be to write something about the conference on my blog after coming back home.
+So, a year ago I started this blog. My initial idea was for this blog to act as a hub of sorts for all my research projects, side-projects and random thoughts related to my research, and to learn more about Github, Jekyll and Markdown. I started well, posting some interesting things, and then... nothing. A combination of work, prioritizing other things, and lack of a writing habit made me abandon this project. 
+
+Last month, I was on an interesting international conference (Computed Assisted Radiology and Surgery, [CARS](https://www.cars-int.org)), and when assisting to the various talks there, I thought about how awesome would it be to write something about the conference on my blog after coming back home.
 
 <center>
 <figure>
