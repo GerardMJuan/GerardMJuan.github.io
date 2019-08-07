@@ -96,9 +96,9 @@ ol ul, ul ol, ul ul, ol ol {
 
 ul ul, ol ul {
   list-style-type: circle;
-  columns: 3;
-  -webkit-columns: 3;
-  -moz-columns: 3;
+  columns: 1;
+  -webkit-columns: 1;
+  -moz-columns: 1;
 }
 
 ul {
@@ -107,9 +107,9 @@ ul {
 	width: 75%;
 	margin-bottom: 1.5em;
 	margin-top: 1em;
-  columns: 3;
-  -webkit-columns: 3;
-  -moz-columns: 3;
+  columns: 1;
+  -webkit-columns: 1;
+  -moz-columns: 1;
 }
 
 em, i {
