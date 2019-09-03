@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Guide to use Jupyter in an HPC environment
+description: How to use Jupyter and Jupyter lab in your browser but running in a remote server.
+tags: python jupyter hpc guide
 ---
 
 In this small blog post I will detail how to use [Jupyter](https://jupyter.org/) applications (notebooks and JupyterLab) from a computing node in a HPC. This post is a follow-up to [the previous post](2018-7-16-Guide-For-Conda-Environment.md).  

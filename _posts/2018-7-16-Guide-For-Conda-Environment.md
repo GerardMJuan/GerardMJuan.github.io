@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Creation of a custom Python environment in the UPF HPC environment
+description: How to build a custom Python installation and enviroment in a closed, remote server.
+tags: python jupyter hpc guide
 ---
 
 One of the most important aspects of a machine learning related PhD is the large computing power needed for the experiments. Normally, in research centers and universities, this is solved by the availability of a cluster infrastructure with large computing capabilities, accessible by every researcher.

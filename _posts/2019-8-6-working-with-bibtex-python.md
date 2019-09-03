@@ -1,6 +1,9 @@
 ---
 layout: post
+author: Gerard Martí-Juan
 title: Working with BibTeX in Python - Biblib
+description: Python can solve (almost) everything, if you find the right package, that is.
+tags: guide python code
 ---
 
 During a PhD, one can read and store hundreds of papers. There is always a need to keep the papers well organized and kept, and also to have a way to easily transfer the citations of the papers to a manuscript. 

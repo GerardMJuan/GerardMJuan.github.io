@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Revive - Trying to build a writing habit
+description: Plans for this website, going forward.
+tags: personal blog
 ---
 
 So, a year ago I started this blog. My initial idea was for this blog to act as a hub of sorts for all my research projects, side-projects and random thoughts related to my research, and to learn more about Github, Jekyll and Markdown. I started well, posting some interesting things, and then... nothing. A combination of work, prioritizing other things, and lack of a writing habit made me abandon this project. 

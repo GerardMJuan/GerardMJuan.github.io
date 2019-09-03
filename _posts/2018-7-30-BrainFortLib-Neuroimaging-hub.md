@@ -1,6 +1,8 @@
 ---
 layout: post
 title: BrainFortLib - Neuroimaging scripts hub
+description: Github compilation of neuroimaging scripts that can be useful.
+tags: python phd code 
 ---
 
 Processing images and scans of the brain has been a big part of my PhD activity. When I started, I had never worked with brain images before, neither with neuroimaging tools and libraries. I was given a set of scripts that my supervisor had used for processing brain images, but apart from that I had no other support: nobody else in my department worked on brain imaging.

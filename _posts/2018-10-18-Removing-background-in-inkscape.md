@@ -1,6 +1,8 @@
 ---
 layout: post
-title: Removing backgrounds of images in Inkscape, or how to waste your time in stupid things
+title: Removing backgrounds of images in Inkscape
+description: Or how to waste your time in stupid things that seem obvious but they are not
+tags: guide graphics inkscape
 ---
 
 Earlier this week, I was using [Freesurfer](https://surfer.nmr.mgh.harvard.edu/) to generate some nice brain cortex images to add them to a paper. My go-to program to create scientific figures is  [Inkscape](https://inkscape.org/), mainly because it is free, relatively easy to use, and there are lot of nice guides online. However, the problem with this kind of software is that sometimes, simple actions can actually only be done with workarounds or with unintuitive tools. This small blog post is a testament to one of those times.
