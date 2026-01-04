@@ -1,0 +1,40 @@
+<!-- Search Box -->
+<div class="search-container">
+  <input type="text" id="search-input" placeholder="Search posts..." />
+  <ul id="results-container"></ul>
+</div>
+
+<!-- Simple-Jekyll-Search - Lazy loaded on first interaction -->
+<script>
+  (function() {
+    let searchInitialized = false;
+    const searchInput = document.getElementById('search-input');
+
+    function initializeSearch() {
+      if (searchInitialized) return;
+      searchInitialized = true;
+
+      // Load Simple-Jekyll-Search library
+      const script = document.createElement('script');
+      script.src = 'https://unpkg.com/simple-jekyll-search@1.9.1/dest/simple-jekyll-search.min.js';
+      script.integrity = 'sha384-4ShP8P7RkYlVq4vULdZ0vDoiBl2B0VZBVg/sxeVlpZKXHKVcECzJb6YL9kKwV1E4';
+      script.crossOrigin = 'anonymous';
+      script.onload = function() {
+        SimpleJekyllSearch({
+          searchInput: searchInput,
+          resultsContainer: document.getElementById('results-container'),
+          json: '{{ site.baseurl }}/search.json',
+          searchResultTemplate: '<li><a href="{url}">{title}</a><br><small>{date} - {excerpt}</small></li>',
+          noResultsText: 'No results found',
+          limit: 10,
+          fuzzy: false
+        });
+      };
+      document.head.appendChild(script);
+    }
+
+    // Initialize search on first focus or input
+    searchInput.addEventListener('focus', initializeSearch, { once: true });
+    searchInput.addEventListener('input', initializeSearch, { once: true });
+  })();
+</script>

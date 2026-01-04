@@ -1,0 +1,38 @@
+<!-- Lazy Loading for Images -->
+<script>
+  (function() {
+    // Add loading="lazy" to all images
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('img:not([loading])');
+
+      images.forEach(function(img) {
+        // Skip avatar images and images already in viewport
+        if (!img.classList.contains('site-avatar') && !img.closest('.site-avatar')) {
+          // Check if image is in viewport - if so, don't lazy load it
+          const rect = img.getBoundingClientRect();
+          const inViewport = rect.top < window.innerHeight && rect.bottom > 0;
+
+          if (!inViewport) {
+            img.setAttribute('loading', 'lazy');
+          }
+
+          // Add loaded class when image loads or is already complete
+          if (img.complete && img.naturalHeight !== 0) {
+            img.classList.add('loaded');
+          } else {
+            img.addEventListener('load', function() {
+              img.classList.add('loaded');
+            });
+            // Add error handler for failed loads
+            img.addEventListener('error', function() {
+              img.classList.add('loaded'); // Still show the broken image icon
+            });
+          }
+        } else {
+          // Avatars should load immediately and be visible
+          img.classList.add('loaded');
+        }
+      });
+    });
+  })();
+</script>
