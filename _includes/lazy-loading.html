@@ -1,0 +1,28 @@
+<!-- Lazy Loading for Images -->
+<script>
+  (function() {
+    // Add loading="lazy" to all images
+    document.addEventListener('DOMContentLoaded', function() {
+      const images = document.querySelectorAll('img:not([loading])');
+
+      images.forEach(function(img) {
+        // Skip avatar images
+        if (!img.classList.contains('site-avatar') && !img.closest('.site-avatar')) {
+          img.setAttribute('loading', 'lazy');
+
+          // Add loaded class when image loads
+          if (img.complete) {
+            img.classList.add('loaded');
+          } else {
+            img.addEventListener('load', function() {
+              img.classList.add('loaded');
+            });
+          }
+        } else {
+          // Avatars should load immediately and be visible
+          img.classList.add('loaded');
+        }
+      });
+    });
+  })();
+</script>

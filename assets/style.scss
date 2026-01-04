@@ -127,6 +127,16 @@ img {
   max-width: 100%;
 }
 
+// Lazy loading images
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
 code {
 	font: normal normal;
 	font-size: 90%;
@@ -311,3 +321,5 @@ footer {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
+@import "darkmode";
+@import "search";
