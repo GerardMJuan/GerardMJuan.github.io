@@ -29,21 +29,65 @@
         button.addEventListener('click', function() {
           const code = codeBlock.textContent || codeBlock.innerText;
 
-          navigator.clipboard.writeText(code).then(function() {
-            button.textContent = 'Copied!';
-            button.classList.add('copied');
+          if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+            navigator.clipboard.writeText(code).then(function() {
+              button.textContent = 'Copied!';
+              button.classList.add('copied');
 
-            setTimeout(function() {
-              button.textContent = 'Copy';
-              button.classList.remove('copied');
-            }, 2000);
-          }).catch(function(err) {
-            console.error('Failed to copy:', err);
-            button.textContent = 'Failed';
-            setTimeout(function() {
-              button.textContent = 'Copy';
-            }, 2000);
-          });
+              setTimeout(function() {
+                button.textContent = 'Copy';
+                button.classList.remove('copied');
+              }, 2000);
+            }).catch(function(err) {
+              console.error('Failed to copy:', err);
+              button.textContent = 'Failed';
+              setTimeout(function() {
+                button.textContent = 'Copy';
+              }, 2000);
+            });
+          } else {
+            // Fallback for older browsers or insecure contexts
+            try {
+              const textarea = document.createElement('textarea');
+              textarea.value = code;
+              // Avoid scrolling to bottom
+              textarea.style.position = 'fixed';
+              textarea.style.top = '0';
+              textarea.style.left = '0';
+              textarea.style.width = '1px';
+              textarea.style.height = '1px';
+              textarea.style.padding = '0';
+              textarea.style.border = 'none';
+              textarea.style.outline = 'none';
+              textarea.style.boxShadow = 'none';
+              textarea.style.background = 'transparent';
+              document.body.appendChild(textarea);
+              textarea.select();
+              const successful = document.execCommand && document.execCommand('copy');
+              document.body.removeChild(textarea);
+
+              if (successful) {
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                setTimeout(function() {
+                  button.textContent = 'Copy';
+                  button.classList.remove('copied');
+                }, 2000);
+              } else {
+                console.error('Failed to copy: document.execCommand("copy") returned false');
+                button.textContent = 'Failed';
+                setTimeout(function() {
+                  button.textContent = 'Copy';
+                }, 2000);
+              }
+            } catch (err) {
+              console.error('Failed to copy using fallback:', err);
+              button.textContent = 'Failed';
+              setTimeout(function() {
+                button.textContent = 'Copy';
+              }, 2000);
+            }
+          }
         });
 
         wrapper.appendChild(button);

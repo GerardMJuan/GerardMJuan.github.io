@@ -3,6 +3,7 @@
 //
 
 .toc-container {
+  display: none; // Hidden by default, shown by JavaScript when needed
   background: var(--footer-bg);
   border: 1px solid var(--border-color);
   border-radius: 5px;
