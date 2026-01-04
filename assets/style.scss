@@ -127,14 +127,14 @@ img {
   max-width: 100%;
 }
 
-// Lazy loading images
-img[loading="lazy"] {
+// Lazy loading images - only hide if not yet loaded
+img[loading="lazy"]:not(.loaded) {
   opacity: 0;
-  transition: opacity 0.3s;
 }
 
 img[loading="lazy"].loaded {
   opacity: 1;
+  transition: opacity 0.3s;
 }
 
 code {
@@ -337,4 +337,5 @@ footer {
 @import "svg-icons";
 @import "darkmode";
 @import "search";
-@import "toc";@import "code-copy";
+@import "toc";
+@import "code-copy";

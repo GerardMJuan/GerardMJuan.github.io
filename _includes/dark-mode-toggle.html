@@ -16,8 +16,12 @@
     const sunIcon = document.getElementById('sun-icon');
     const htmlElement = document.documentElement;
 
-    // Check for saved theme preference or default to light mode
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    // Check for saved theme preference; if none, respect system preference before defaulting to light
+    let currentTheme = localStorage.getItem('theme');
+    if (!currentTheme) {
+      // Check system preference
+      currentTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
 
     // Apply the theme immediately to prevent flash
     if (currentTheme === 'dark') {

@@ -8,6 +8,9 @@
 
   pre {
     margin: 0;
+    // Ensure enough padding for the button
+    padding-top: 1em;
+    padding-right: 5em;
   }
 
   .copy-button {
@@ -27,7 +30,7 @@
     z-index: 10;
 
     &:hover {
-      opacity: 1 !important;
+      opacity: 1;
       filter: brightness(1.1);
     }
 
@@ -45,14 +48,9 @@
   }
 }
 
-// Make sure code blocks have enough padding for the button
-pre {
-  padding-top: 1em !important;
-  padding-right: 5em !important;
-}
-
-div.highlight pre,
-figure.highlight pre {
-  padding-top: 1em !important;
-  padding-right: 5em !important;
+// Ensure padding for highlight containers
+div.highlight .code-wrapper pre,
+figure.highlight .code-wrapper pre {
+  padding-top: 1em;
+  padding-right: 5em;
 }

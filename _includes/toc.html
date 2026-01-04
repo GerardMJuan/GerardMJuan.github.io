@@ -33,7 +33,12 @@
           a.onclick = function(e) {
             e.preventDefault();
             heading.scrollIntoView({ behavior: 'smooth' });
-            window.location.hash = heading.id;
+            // Use history.replaceState to avoid double jump from hash change
+            if (history.replaceState) {
+              history.replaceState(null, null, '#' + heading.id);
+            } else {
+              window.location.hash = heading.id;
+            }
           };
 
           li.appendChild(a);
