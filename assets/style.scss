@@ -286,6 +286,20 @@ nav {
 }
 
 .post {
+  .post-metadata {
+    margin-bottom: 1em;
+    color: $gray;
+    font-size: 0.9em;
+
+    .reading-time {
+      color: $gray;
+    }
+  }
+
+  .post-tags {
+    margin-bottom: 1.5em;
+  }
+
   blockquote {
     margin: 1.8em .8em;
     border-left: 2px solid $gray;
@@ -323,3 +337,4 @@ footer {
 @import "svg-icons";
 @import "darkmode";
 @import "search";
+@import "toc";@import "code-copy";

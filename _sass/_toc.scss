@@ -1,0 +1,64 @@
+//
+// TABLE OF CONTENTS
+//
+
+.toc-container {
+  background: var(--footer-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 1.5em;
+  margin: 2em 0;
+
+  .toc-title {
+    margin-top: 0;
+    margin-bottom: 0.75em;
+    font-size: 1.2em;
+    color: var(--text-color-lighter);
+  }
+
+  .toc {
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      width: 100%;
+
+      li {
+        margin: 0.5em 0;
+        padding: 0;
+
+        a {
+          color: var(--link-color);
+          text-decoration: none;
+          transition: all 0.2s;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        // Indentation for nested headings
+        &.toc-h2 {
+          padding-left: 0;
+          font-weight: 500;
+        }
+
+        &.toc-h3 {
+          padding-left: 1.5em;
+          font-size: 0.95em;
+        }
+
+        &.toc-h4 {
+          padding-left: 3em;
+          font-size: 0.9em;
+          color: var(--text-color-light);
+        }
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 1em;
+    margin: 1.5em 0;
+  }
+}
