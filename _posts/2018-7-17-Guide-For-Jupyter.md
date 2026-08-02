@@ -5,7 +5,7 @@ description: How to use Jupyter and Jupyter lab in your browser but running in a
 tags: python jupyter hpc guide
 ---
 
-In this small blog post I will detail how to use [Jupyter](https://jupyter.org/) applications (notebooks and JupyterLab) from a computing node in a HPC. This post is a follow-up to [the previous post](2018-7-16-Guide-For-Conda-Environment.md).  
+In this small blog post I will detail how to use [Jupyter](https://jupyter.org/) applications (notebooks and JupyterLab) from a computing node in a HPC. This post is a follow-up to [the previous post]({{ '/Guide-For-Conda-Environment/' | relative_url }}).
 
 I will assume that you already have defined a custom Python environment. If that is not the case, you will need to install on your own the Jupyter package, but the general procedure still applies.
 
