@@ -4,6 +4,11 @@ title: Categories
 permalink: /blog/categories/
 ---
 
+<header class="page-intro">
+  <h1>Categories</h1>
+  <p>Every post, grouped by category.</p>
+</header>
+
 <div class="tags-expo">
   <div class="tags-expo-list">
     {% for tag in site.categories %}

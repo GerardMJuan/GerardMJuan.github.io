@@ -6,34 +6,70 @@ permalink:
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-content">
-    <img src="{{ site.avatar }}" alt="Gerard Martí Juan" class="hero-avatar" />
-    <h1 class="hero-title">Gerard Martí Juan, Ph.D.</h1>
-    <p class="hero-subtitle">Senior AI Researcher | Medical Imaging & Machine Learning</p>
+    {%- comment -%}
+      TODO(gerard): drop a ≥450×450 headshot at images/profile@2x.jpg and the
+      srcset below starts serving it. The current file is 150×150, which is
+      soft on any retina screen.
+    {%- endcomment -%}
+    <img src="{{ site.avatar | relative_url }}"
+         srcset="{{ site.avatar | relative_url }} 1x, {{ '/images/profile@2x.jpg' | relative_url }} 2x"
+         alt="Gerard Martí Juan" class="hero-avatar" width="104" height="104" />
+    <h1 class="hero-title">Gerard Martí Juan</h1>
+    <p class="hero-subtitle">Medical imaging &amp; machine learning</p>
+
     <p class="hero-description">
-      Building AI solutions for healthcare at <a href="https://eden.ai">Eden</a> and conducting research in medical imaging at <a href="https://www.upf.edu/web/bcn-medtech">UPF BCN Medtech</a>. Focused on brain MRI analysis, deep learning, and clinical decision support systems.
+      I build machine learning for medical images — mostly brains. Right now that means
+      fetal brain MRI at <a href="https://www.upf.edu/web/bcn-medtech">UPF BCN MedTech</a>
+      in Barcelona, and healthcare AI at <a href="https://eden.ai">Eden</a>. Before that:
+      lesions in multiple sclerosis, and a Ph.D. spent on why Alzheimer's disease looks
+      a little different in every patient you scan.
     </p>
+
+    {%- comment -%}
+      TODO(gerard): this paragraph is a point of view I drafted from the themes in
+      your own papers (multi-centric quality control, progression modelling). It
+      reads as yours, but it is mine — rewrite it in your words, or cut it.
+    {%- endcomment -%}
+    <p class="hero-description">
+      The part I find most interesting is the least glamorous one: whether a model still
+      works on a scanner it has never seen, on data that nobody tidied up first. That is
+      where most of the difficulty in clinical machine learning actually lives — not in
+      the architecture.
+    </p>
+
     <div class="hero-cta">
-      <a href="{{ site.baseurl }}/cv/" class="btn btn-primary">View CV</a>
-      <a href="{{ site.baseurl }}/publications/" class="btn btn-secondary">Publications</a>
+      <a href="{{ '/publications/' | relative_url }}" class="btn btn-primary">Publications</a>
+      <a href="{{ '/cv/' | relative_url }}" class="btn btn-secondary">CV</a>
+      <a href="{{ '/about/' | relative_url }}" class="btn btn-secondary">About me</a>
     </div>
   </div>
 </section>
 
 {% include search.html %}
 
-<h2 id="posts" class="posts-header">Recent Posts</h2>
+<div class="section-header">
+  <h2 id="posts">Writing</h2>
+</div>
+<p class="section-note">
+  Notes to myself from the Ph.D. years, published in case they save someone else an
+  afternoon. Nothing new here since 2019.
+</p>
 
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
 
-      <h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
+      <h3 class="post-list-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+
+      <div class="post-metadata">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %Y" }}</time>
+      </div>
 
       <div class="entry">
         {{ post.excerpt }}
       </div>
 
-      <a href="{{ post.url | relative_url }}" class="read-more">Read More</a>
+      <a href="{{ post.url | relative_url }}" class="read-more">Read more</a>
     </article>
   {% endfor %}
 </div>

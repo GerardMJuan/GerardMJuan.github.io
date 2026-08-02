@@ -1,0 +1,52 @@
+//
+// THEME TOGGLE
+//
+// Lives inline in the masthead rather than floating fixed at the bottom-right.
+// That puts it in a sensible place in the tab order (right after the nav links)
+// instead of dead last in the document, and stops it covering page content.
+//
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-color-light);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+
+  user-select: none;
+  -webkit-user-select: none;
+
+  &:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-subtle);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .theme-icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+  }
+
+  @include mobile {
+    width: 32px;
+    height: 32px;
+
+    .theme-icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

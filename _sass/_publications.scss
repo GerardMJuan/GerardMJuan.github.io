@@ -1,0 +1,129 @@
+//
+// PUBLICATIONS
+//
+// Rendered from _data/publications.yml by blog/publications.md.
+//
+
+.pub-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin: 0 0 2.5rem;
+  padding: 1.1rem 1.3rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: var(--bg-subtle);
+}
+
+.pub-stat {
+  display: flex;
+  flex-direction: column;
+
+  .pub-stat-value {
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--text-color-lighter);
+  }
+
+  .pub-stat-label {
+    margin-top: 0.15rem;
+    color: var(--text-color-light);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+}
+
+.pub-year-heading {
+  margin: 2.5em 0 0.2em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 1.05rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-color-light);
+}
+
+.pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pub-item {
+  margin: 0;
+  padding: 1.4em 0;
+  border-bottom: 1px solid var(--border-color);
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.pub-title {
+  margin: 0 0 0.35em;
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--text-color-lighter);
+}
+
+.pub-authors {
+  margin: 0 0 0.3em;
+  color: var(--text-color-light);
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  // The site owner's own name, emphasised so it is findable at a glance.
+  .pub-self {
+    color: var(--text-color);
+    font-weight: 700;
+  }
+}
+
+.pub-venue {
+  margin: 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text-color);
+}
+
+.pub-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.9rem;
+  margin-top: 0.6em;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+}
+
+.pub-type {
+  padding: 0.1em 0.55em;
+  border-radius: 999px;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.pub-link {
+  font-weight: 600;
+  text-decoration: none;
+
+  &:after {
+    content: " \2197";
+    font-size: 0.9em;
+  }
+}
+
+// The timeline chart sits above the list; the list itself is the no-JS fallback.
+.pub-chart {
+  margin-bottom: 2.5rem;
+}

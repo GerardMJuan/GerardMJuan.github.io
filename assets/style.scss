@@ -5,9 +5,10 @@
 // IMPORTS
 //
 
-// (Your custom CSS Here)
 @import "reset";
-@import "variables";
+@import "variables";  // breakpoint mixin only — colours live in _tokens
+@import "tokens";
+@import "darkmode";   // token overrides for [data-theme="dark"]
 @import "tag";
 
 // Syntax highlighting @import is at the bottom of this file
@@ -21,68 +22,75 @@ html {
 }
 
 body {
-	background: $white;
-  font: 18px/1.4 $helvetica;
-  color: $darkGray;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-serif);
+  font-size: 19px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .container {
   margin: 0 auto;
   max-width: 740px;
-  padding: 0 10px;
+  padding: 0 16px;
   width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $helveticaNeue;
-  color: $darkerGray;
-  font-weight: bold;
-
-  line-height: 1.7;
-  margin: 1em 0 15px;
+  font-family: var(--font-serif);
+  color: var(--text-color-lighter);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin: 1.6em 0 0.5em;
   padding: 0;
-
-  @include mobile {
-    line-height: 1.4;
-  }
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 2.15rem;
   a {
     color: inherit;
   }
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 1.6rem;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 1.3rem;
 }
 
 h4 {
-  font-size: 18px;
-  color: $gray;
+  font-size: 1.1rem;
+  color: var(--text-color-light);
 }
 
 p {
-  margin: 15px 0;
+  margin: 1em 0;
 }
 
 a {
-  color: $blue;
-  text-decoration: none;
-	cursor: pointer;
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  text-decoration-color: var(--accent-subtle);
+  cursor: pointer;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+
   &:hover, &:active {
-    color: $blue;
+    color: var(--accent-hover);
+    text-decoration-color: currentColor;
   }
 }
 
 ul, ol {
-  margin: 15px 0;
-  padding-left: 30px;
+  margin: 1em 0;
+  padding-left: 1.4em;
 }
 
 ul {
@@ -99,20 +107,10 @@ ol ul, ul ol, ul ul, ol ol {
 
 ul ul, ol ul {
   list-style-type: circle;
-  columns: 1;
-  -webkit-columns: 1;
-  -moz-columns: 1;
 }
 
-ul {
-	position: relative;
-	left: 0%;
-	width: 75%;
-	margin-bottom: 1.5em;
-	margin-top: 1em;
-  columns: 1;
-  -webkit-columns: 1;
-  -moz-columns: 1;
+li {
+  margin: 0.35em 0;
 }
 
 em, i {
@@ -120,16 +118,51 @@ em, i {
 }
 
 strong, b {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 button,
 input {
   font: inherit;
+}
+
+hr {
+  height: 1px;
+  margin: 2.5em 0;
+  border: 0;
+  background: var(--border-color);
+}
+
+blockquote {
+  margin: 1.8em 0;
+  padding: 0.1em 1.2em;
+  border-left: 3px solid var(--accent);
+  color: var(--text-color-light);
+  font-style: italic;
+}
+
+table {
+  width: 100%;
+  margin: 1.5em 0;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+}
+
+th, td {
+  padding: 0.5em 0.7em;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+th {
+  font-weight: 600;
+  color: var(--text-color-lighter);
 }
 
 // Keyboard users should always have a visible route to the main content.
@@ -139,9 +172,10 @@ input {
   top: 10px;
   z-index: 2000;
   padding: 0.6em 0.9em;
-  background: var(--link-color);
-  color: var(--bg-color);
-  border-radius: 4px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  border-radius: var(--radius);
+  text-decoration: none;
 
   &:focus {
     left: 10px;
@@ -161,8 +195,9 @@ input {
 }
 
 :focus-visible {
-  outline: 3px solid var(--link-color);
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
+  border-radius: 2px;
 }
 
 // Lazy loading images - only hide if not yet loaded
@@ -176,10 +211,20 @@ img[loading="lazy"].loaded {
 }
 
 code {
-	font: normal normal;
-	font-size: 90%;
-	font-family: $helveticaNeue;
-	color: #aaa;
+  padding: 0.15em 0.35em;
+  border-radius: 3px;
+  background: var(--code-bg);
+  color: var(--code-color);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+pre {
+  code {
+    padding: 0;
+    background: none;
+    font-size: inherit;
+  }
 }
 
 // Fixes images in popup boxes from Google Translate
@@ -188,18 +233,19 @@ code {
 }
 
 .date {
-  font-style: italic;
-  color: $gray;
+  color: var(--text-color-light);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
 }
 
 // Specify the color of the selection
 ::-moz-selection {
-  color: $black;
-  background: $lightGray;
+  color: var(--selection-text);
+  background: var(--selection-bg);
 }
 ::selection {
-  color: $black;
-  background: $lightGray;
+  color: var(--selection-text);
+  background: var(--selection-bg);
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -221,95 +267,81 @@ code {
 //
 // .masthead
 //
+// A wordmark and the nav, nothing else — the homepage hero is the only place
+// that introduces Gerard, so the avatar and tagline do not repeat up here.
+//
 
 .wrapper-masthead {
-  margin-bottom: 50px;
+  margin-bottom: 2.5rem;
 }
 
 .masthead {
-  padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border-color);
 
   @include mobile {
+    justify-content: center;
     text-align: center;
-  }
-}
-
-.site-avatar {
-  float: left;
-  width: 70px;
-  height: 70px;
-  margin-right: 15px;
-
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
-  }
-
-  img {
-    border-radius: 5px;
-  }
-}
-
-.site-info {
-  float: left;
-
-  @include mobile {
-    float: none;
-    display: block;
-    margin: 0 auto;
   }
 }
 
 .site-name {
   margin: 0;
-  color: $darkGray;
-  cursor: pointer;
-  font-family: $helveticaNeue;
-  font-weight: 300;
-  font-size: 28px;
-  letter-spacing: 1px;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+
+  a {
+    color: var(--text-color-lighter);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
 }
 
-.site-description {
-  margin: -5px 0 0 0;
-  color: $gray;
-  font-size: 16px;
+.masthead-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
 
   @include mobile {
-    margin: 3px 0;
+    gap: 0.9rem;
   }
 }
 
 .primary-nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.75em;
-  float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $helveticaNeue;
-  font-size: 18px;
+  align-items: center;
+  gap: 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
 
   @include mobile {
-    float: none;
-    margin-top: 9px;
-    display: flex;
-    font-size: 16px;
     justify-content: center;
+    gap: 0.9rem;
+    font-size: 0.9rem;
   }
 
   a {
-    margin-left: 0;
-    color: $darkGray;
-    text-align: right;
-    font-weight: 300;
-    letter-spacing: 1px;
+    color: var(--text-color-light);
+    text-decoration: none;
 
-    @include mobile {
-      margin: 0;
-      color: $blue;
+    &:hover {
+      color: var(--accent);
+    }
+
+    &[aria-current="page"] {
+      color: var(--text-color-lighter);
+      font-weight: 600;
     }
   }
 }
@@ -319,12 +351,27 @@ code {
 //
 
 .page-intro {
-  margin-bottom: 2em;
+  margin-bottom: 2.5em;
+
+  h1 {
+    margin-top: 0.4em;
+  }
+
+  p {
+    max-width: var(--measure);
+    color: var(--text-color-light);
+    font-size: 1.05rem;
+  }
+}
+
+.entry {
+  max-width: var(--measure);
 }
 
 .empty-state {
   padding: 1em;
   border: 1px dashed var(--border-color);
+  border-radius: var(--radius);
   color: var(--text-color-light);
 }
 
@@ -340,8 +387,8 @@ code {
   flex-direction: column;
   padding: 1.25em;
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  background: var(--footer-bg);
+  border-radius: var(--radius-lg);
+  background: var(--bg-subtle);
 
   h2 {
     margin-top: 0;
@@ -356,8 +403,9 @@ code {
 .project-kicker {
   margin: 0 0 0.35em;
   color: var(--text-color-light);
-  font-size: 0.8em;
-  font-weight: bold;
+  font-family: var(--font-sans);
+  font-size: 0.75em;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -376,14 +424,14 @@ code {
 .project-links {
   display: flex;
   flex-wrap: wrap;
-  float: none;
   gap: 0.75em;
   margin: 2em 0;
 
   a {
     padding: 0.45em 0.8em;
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: var(--radius);
+    text-decoration: none;
   }
 }
 
@@ -405,7 +453,7 @@ code {
   padding: 1em;
   overflow-x: auto;
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   background: var(--bg-color);
 }
 
@@ -413,6 +461,7 @@ code {
   .chart-status {
     margin: 0;
     color: var(--text-color-light);
+    font-family: var(--font-sans);
     font-size: 0.9em;
   }
 
@@ -446,9 +495,13 @@ code {
   }
 }
 
+//
+// Post listing
+//
+
 .posts > .post {
   padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .posts > .post:last-child {
@@ -456,28 +509,30 @@ code {
   border-bottom: none;
 }
 
+.post-list-title {
+  margin: 1.2em 0 0.3em;
+  font-size: 1.45rem;
+
+  a {
+    color: var(--text-color-lighter);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
 .post {
   .post-metadata {
     margin-bottom: 1em;
-    color: $gray;
-    font-size: 0.9em;
-
-    .reading-time {
-      color: $gray;
-    }
+    color: var(--text-color-light);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
   }
 
   .post-tags {
     margin-bottom: 1.5em;
-  }
-
-  blockquote {
-    margin: 1.8em .8em;
-    border-left: 2px solid $gray;
-    padding: 0.1em 1em;
-    color: $gray;
-    font-size: 22px;
-    font-style: italic;
   }
 
   .comments {
@@ -485,21 +540,39 @@ code {
   }
 
   .read-more {
-    text-transform: uppercase;
-    font-size: 15px;
+    display: inline-block;
+    margin-top: 0.4em;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:after {
+      content: " \2192";
+    }
   }
 }
 
 .wrapper-footer {
-  margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  margin-top: 4rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--footer-bg);
 }
 
 footer {
-  padding: 20px 0;
+  padding: 1.5rem 0;
   text-align: center;
+}
+
+.footer-note {
+  margin: 0.75rem 0 0;
+  color: var(--text-color-light);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+
+  a {
+    color: var(--text-color-light);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -514,109 +587,129 @@ footer {
 }
 
 //
-// Hero Section
+// Hero
 //
 
 .hero {
-  text-align: center;
-  padding: 3rem 1rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid $lightGray;
+  padding: 1rem 0 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .hero-content {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: var(--measure);
 }
 
 .hero-avatar {
-  width: 150px;
-  height: 150px;
+  width: 104px;
+  height: 104px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  margin-bottom: 1.25rem;
+  border: 3px solid var(--bg-subtle);
+  box-shadow: var(--shadow);
 }
 
 .hero-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem 0;
-  color: $darkerGray;
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.02em;
+  color: var(--text-color-lighter);
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
-  color: $gray;
-  margin: 0 0 1rem 0;
-  font-weight: 400;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1.25rem;
 }
 
 .hero-description {
-  font-size: 1rem;
-  color: $darkGray;
-  line-height: 1.6;
-  margin: 0 0 1.5rem 0;
+  font-size: 1.12rem;
+  color: var(--text-color);
+  margin: 0 0 1rem;
+
+  &:last-of-type {
+    margin-bottom: 1.75rem;
+  }
 }
 
 .hero-cta {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
 }
 
 .btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  font-weight: 500;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
 .btn-primary {
-  background-color: $blue;
-  color: $white;
+  background-color: var(--accent);
+  color: var(--accent-contrast);
+  border: 1px solid var(--accent);
 
   &:hover {
-    background-color: darken($blue, 10%);
-    color: $white;
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: var(--accent-contrast);
   }
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: $blue;
-  border: 2px solid $blue;
+  color: var(--accent);
+  border: 1px solid var(--border-strong);
 
   &:hover {
-    background-color: $blue;
-    color: $white;
+    border-color: var(--accent);
+    color: var(--accent-hover);
   }
 }
 
-.posts-header {
-  margin-top: 0;
-  padding-top: 1rem;
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 0.25em;
+}
+
+.section-note {
+  max-width: var(--measure);
+  margin: 0 0 2em;
+  color: var(--text-color-light);
+  font-size: 0.95rem;
 }
 
 @include mobile {
   .hero {
-    padding: 2rem 1rem;
+    padding: 0.5rem 0 2rem;
   }
 
   .hero-avatar {
-    width: 120px;
-    height: 120px;
+    width: 88px;
+    height: 88px;
   }
 
   .hero-title {
-    font-size: 1.5rem;
+    font-size: 1.85rem;
   }
 
-  .hero-subtitle {
-    font-size: 1rem;
+  body {
+    font-size: 18px;
   }
 }
 
@@ -624,7 +717,8 @@ footer {
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
 @import "svg-icons";
-@import "darkmode";
 @import "search";
 @import "toc";
 @import "code-copy";
+@import "theme-toggle";
+@import "publications";

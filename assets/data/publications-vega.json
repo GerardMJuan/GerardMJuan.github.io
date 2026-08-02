@@ -1,0 +1,119 @@
+---
+layout: none
+---
+{%- comment -%}
+  Generated from _data/publications.yml — the same source the list on
+  /publications/ renders from, so the chart can never drift out of sync.
+  Same Liquid-generates-JSON pattern as /search.json.
+
+  Palettes are the first three slots of the validated categorical set, stepped
+  separately for each surface. Vega draws to canvas and cannot read CSS
+  variables, so assets/js/vega-lite.js merges usermeta.themes.<mode> into
+  config at render time and re-renders when the theme toggle flips.
+{%- endcomment -%}
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Publications by year, grouped into research threads.",
+  "width": "container",
+  "height": 190,
+  "autosize": { "type": "fit-x", "contains": "padding" },
+  "background": "transparent",
+  "data": {
+    "values": [
+      {%- assign entries = site.data.publications.entries -%}
+      {%- for pub in entries -%}
+      {
+        "year": {{ pub.year }},
+        "topic": {{ site.data.publications.topics[pub.topic] | default: "Other" | jsonify }},
+        "title": {{ pub.title | jsonify }},
+        "venue": {{ pub.venue | jsonify }},
+        "type": {{ pub.type | capitalize | jsonify }}
+      }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    ]
+  },
+  "mark": {
+    "type": "circle",
+    "size": 240,
+    "opacity": 1,
+    "stroke": "transparent",
+    "strokeWidth": 2,
+    "cursor": "pointer"
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "ordinal",
+      "title": null,
+      "axis": { "labelAngle": 0, "labelPadding": 8, "grid": true }
+    },
+    "y": {
+      "field": "topic",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        {%- assign topic_keys = site.data.publications.topics -%}
+        {%- for t in topic_keys -%}{{ t[1] | jsonify }}{% unless forloop.last %}, {% endunless %}{%- endfor -%}
+      ],
+      "axis": { "labelLimit": 160, "labelPadding": 8, "grid": true }
+    },
+    "color": {
+      "field": "topic",
+      "type": "nominal",
+      "legend": {
+        "title": null,
+        "orient": "bottom",
+        "direction": "horizontal",
+        "symbolType": "circle",
+        "symbolSize": 110,
+        "labelLimit": 200
+      }
+    },
+    "tooltip": [
+      { "field": "title", "type": "nominal", "title": "Paper" },
+      { "field": "venue", "type": "nominal", "title": "Venue" },
+      { "field": "year", "type": "ordinal", "title": "Year" },
+      { "field": "type", "type": "nominal", "title": "Type" }
+    ]
+  },
+  "usermeta": {
+    "themes": {
+      "light": {
+        "range": { "category": ["#2a78d6", "#eb6834", "#1baf7a"] },
+        "axis": {
+          "labelColor": "#6b625b",
+          "labelFontSize": 12,
+          "labelFont": "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif",
+          "domainColor": "#e8e0d8",
+          "tickColor": "#e8e0d8",
+          "gridColor": "#efe8e0",
+          "gridDash": [2, 4]
+        },
+        "legend": {
+          "labelColor": "#6b625b",
+          "labelFontSize": 12,
+          "labelFont": "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
+        },
+        "view": { "stroke": "transparent" }
+      },
+      "dark": {
+        "range": { "category": ["#3987e5", "#d95926", "#199e70"] },
+        "axis": {
+          "labelColor": "#a89e94",
+          "labelFontSize": 12,
+          "labelFont": "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif",
+          "domainColor": "#332c27",
+          "tickColor": "#332c27",
+          "gridColor": "#2a2420",
+          "gridDash": [2, 4]
+        },
+        "legend": {
+          "labelColor": "#a89e94",
+          "labelFontSize": 12,
+          "labelFont": "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif"
+        },
+        "view": { "stroke": "transparent" }
+      }
+    }
+  }
+}

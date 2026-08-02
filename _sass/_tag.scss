@@ -1,25 +1,29 @@
 .post-tag {
     display: inline-block;
-    background: rgba($white, 0.15);
-    padding: 0 .5rem;
-    margin-right: .5rem;
-    border-radius: 4px;
-    color: $blue;
-    font-family: $helveticaNeue;
-    font-size: 90%;
+    background: var(--accent-subtle);
+    padding: 0.15em .6em;
+    margin: 0 .4rem .4rem 0;
+    border-radius: 999px;
+    color: var(--accent);
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    text-decoration: none;
+
+    // Was a Font Awesome glyph, which is only loaded on the CV page — every
+    // other page rendered a tofu box. A plain hash needs no webfont.
     &:before {
-      content: "\f02b";
-      font-family: $font-font-awesome;
-      padding-right: .5em;
+      content: "#";
+      padding-right: .15em;
+      opacity: 0.6;
     }
+
     &:hover {
       text-decoration: none;
-      background: $blue;
-      color: $white;
+      background: var(--accent);
+      color: var(--accent-contrast);
     }
-    /*@include transition(all .1s ease-in-out);*/
   }
-  
+
   .tags-expo {
     :target:before {
       content:"";
@@ -41,7 +45,6 @@
         list-style-position: inside;
         padding: 0;
         li {
-           /*@include transition(all .1s ease-in-out);*/
           padding: 0 1rem;
           &:hover {
             list-style-type: disc;
@@ -55,11 +58,10 @@
       .post-date {
         display: inline-block;
         font-size: 80%;
-        color: #9a9a9a;
+        color: var(--text-color-light);
         margin: 0;
         padding: 0;
       }
-      font-family: $helveticaNeue;
+      font-family: var(--font-sans);
     }
   }
-  

@@ -4,6 +4,11 @@ title: Tags
 permalink: /blog/tags/
 
 ---
+<header class="page-intro">
+  <h1>Tags</h1>
+  <p>Every post, grouped by tag.</p>
+</header>
+
 <div class="tags-expo">
   <div class="tags-expo-list">
     {% for tag in site.tags %}

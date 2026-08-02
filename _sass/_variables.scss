@@ -1,29 +1,11 @@
-
 //
 // VARIABLES
 //
+// Colours and font stacks are CSS custom properties now — see _tokens.scss.
+// This file only holds what Sass needs at compile time.
+//
 
-// Colors - Modern palette
-$blue: #2563eb;
-$blueHover: #1d4ed8;
-
-// Grays
-$black: #000;
-$darkerGray: #1a1a1a;
-$darkGray: #333;
-$gray: #666;
-$lightGray: #f3f4f6;
-$white: #fff;
-
-// Font stacks - Modern system fonts
-$systemFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$helvetica: $systemFont;
-$helveticaNeue: $systemFont;
-$georgia: Georgia, "Times New Roman", serif;
-
-$font-font-awesome: FontAwesome;
-
-// Mobile breakpoints
+// Mobile breakpoint
 @mixin mobile {
   @media screen and (max-width: 640px) {
     @content;

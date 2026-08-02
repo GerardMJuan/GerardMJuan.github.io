@@ -1,38 +1,37 @@
-name: Gerard Martí
-title: Gerard Martí
-tagline: 'My personal website'
+name: Gerard Martí Juan
+title: Gerard Martí Juan
+tagline: 'Medical imaging & machine learning'
 
-# Short bio or description (displayed in the header)
-description: Senior AI Researcher | Ph.D. in Medical AI & Neuroimaging
+# Short bio or description (used in <title> and as the default social description)
+description: Machine learning for medical imaging
 
 avatar: /images/profile.jpg
 
+# 1200x630 card used for link previews. Previously this fell back to `avatar`,
+# so every shared link previewed a 150px thumbnail.
+og_image: /images/og-card.png
+
 author:
   name: Gerard Martí Juan
+  # Was declared twice (gmail then upf); the second silently won and ended up in
+  # the feed. The personal address is the one advertised everywhere else, and it
+  # outlives any affiliation.
   email: gerardmartijuan@gmail.com
   url: https://gerardmjuan.github.io
-  email: gerard.marti@upf.edu
 
 # Includes an icon in the footer for each username you enter
 footer-links:
-  dribbble:
   email: gerardmartijuan@gmail.com
-  facebook:
-  flickr:
   github: GerardMJuan
-  instagram:
+  scholar: 9Qzpt7kAAAAJ
+  orcid: 0000-0003-4729-7182
   linkedin: gerardmjuan
-  pinterest:
-  rss: true
   twitter: gerardmjuan
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
+  rss: true
 
 google_analytics:
 
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
-# Used for Sitemap.xml and your RSS feed
+# Your website URL. Used for Sitemap.xml and your RSS feed.
 url: https://gerardmjuan.github.io
 
 # If you're hosting your site at a Project repository on GitHub pages
@@ -54,17 +53,15 @@ kramdown:
 sass:
   style: :compressed
 
-paginate: 5
-paginate_path: '/blog/page:num'
-
 tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-paginate
 
+# No index page links here any more, but the collection stays wired up so
+# projects can come back as Markdown files without touching config.
 collections:
   projects:
     output: true

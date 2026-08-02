@@ -62,8 +62,17 @@ def validate_source(root: Path) -> list[str]:
 
     data_dir = root / "assets" / "data"
     for data_path in sorted(data_dir.glob("*.json")):
+        text = read_text(data_path)
+
+        # Some specs are Liquid templates rendered from _data (see
+        # publications-vega.json). Their source is not valid JSON by design —
+        # the built copy under _site is what gets checked, in
+        # validate_generated_site.
+        if text.lstrip().startswith("---"):
+            continue
+
         try:
-            json.loads(read_text(data_path))
+            json.loads(text)
         except json.JSONDecodeError as exc:
             errors.append(f"{data_path}: invalid JSON ({exc})")
 
@@ -136,6 +145,13 @@ def validate_generated_site(site: Path) -> list[str]:
     html_files = sorted(site.rglob("*.html"))
     if not html_files:
         errors.append(f"generated site contains no HTML files: {site}")
+
+    # Chart specs are only guaranteed to be JSON once Liquid has run.
+    for data_path in sorted((site / "assets" / "data").glob("*.json")):
+        try:
+            json.loads(read_text(data_path))
+        except json.JSONDecodeError as exc:
+            errors.append(f"{data_path}: generated file is invalid JSON ({exc})")
 
     for path in html_files:
         parser = GeneratedHTMLParser(path)

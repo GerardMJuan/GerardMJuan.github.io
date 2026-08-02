@@ -1,15 +1,10 @@
+# Five items. Projects, Now and Lab were removed: the first two were empty
+# placeholders and /lab/ is a build smoke test for the chart/math includes,
+# which is kept as an unlisted page rather than shown to visitors.
 - title: Home
   url: /
-- title: Projects
-  url: /projects/
-- title: Now
-  url: /now/
-- title: Lab
-  url: /lab/
-- title: Blog
+- title: Writing
   url: /#posts
-- title: Tags
-  url: /blog/tags/
 - title: Publications
   url: /publications/
 - title: CV

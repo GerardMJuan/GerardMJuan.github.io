@@ -1,0 +1,103 @@
+# Publications
+#
+# Single source of truth: blog/publications.md renders the list from this file,
+# and assets/data/publications-vega.json builds the timeline chart from it, so
+# adding a paper here updates both.
+#
+# To refresh from Google Scholar: open your profile, tick the papers, hit
+# Export -> BibTeX, save it, then run
+#     python3 scripts/import_bibtex.py citations.bib > _data/publications.yml
+# and edit the `topic` fields, which BibTeX does not carry.
+#
+# ---------------------------------------------------------------------------
+# TODO(gerard): this list stops at 2023 and is missing your recent fetal MRI
+# work. A web search turned up at least the following, but Google Scholar,
+# OpenAlex, ORCID and Europe PMC are all blocked from the environment this was
+# written in, so none of the metadata could be verified and none of it is
+# listed below. Please add them (or re-run the BibTeX import):
+#   - Advances in Automated Fetal Brain MRI Segmentation and Biometry:
+#     Insights from the FeTA 2024 Challenge (arXiv:2505.02784, 2025)
+#   - Automatic Quality Control in Multi-centric Fetal Brain MRI
+#     Super-Resolution Reconstruction (PIPPI 2025, MICCAI workshop)
+#   - Fetpype: An Open-Source Pipeline for Reproducible Fetal Brain MRI Analysis
+#   - A survey on machine and statistical learning for longitudinal analysis of
+#     neuroimaging data in Alzheimer's Disease (Comput Methods Programs Biomed, 2020)
+#   - Longitudinal Assessment of Abnormal Cortical Folding in Fetuses and
+#     Neonates With Isolated Non-Severe Ventriculomegaly
+# ---------------------------------------------------------------------------
+
+# Name variants to emphasise in author lists. Longest first — they are applied
+# in order, so a shorter variant must not shadow a longer one.
+self_names:
+  - "Martí-Juan, G."
+  - "Martí, G."
+
+# topic drives the colour of each point on the timeline chart.
+topics:
+  alzheimers: "Alzheimer's disease"
+  multiple-sclerosis: "Multiple sclerosis"
+  multimedia: "Multimedia indexing"
+
+entries:
+  - title: "MC-RVAE: Multi-channel recurrent variational autoencoder for multimodal Alzheimer's disease progression modelling"
+    authors: "Martí-Juan, G., Lorenzi, M., Sanroma-Guell, G., Piella, G., and the Alzheimer's Disease Neuroimaging Initiative"
+    venue: "NeuroImage"
+    details: "268, 119892"
+    year: 2023
+    type: journal
+    topic: alzheimers
+    doi: "10.1016/j.neuroimage.2023.119892"
+
+  - title: "Using The Virtual Brain to study the relationship between structural and functional connectivity in patients with multiple sclerosis: a multicenter study"
+    authors: "Martí-Juan, G., Sastre-Garriga, J., Martinez-Heras, E., Vellido, A., Sanz, P., Alberich, M., Solana, E., Lopez-Soley, E., Montejo, C., Sepulveda, M., Cobo-Calvo, A., Cabrera, M., Borruel, L., Sola-Valls, N., Villoslada, P., Saiz, A., Blanco, Y., Montalban, X., Rovira, A., Piella, G., Llufriu, S."
+    venue: "Cerebral Cortex"
+    details: "33(8), 4695-4705"
+    year: 2023
+    type: journal
+    topic: multiple-sclerosis
+    doi: "10.1093/cercor/bhad041"
+
+  - title: "Detection of lesions in the optic nerve with magnetic resonance imaging using a 3D convolutional neural network"
+    authors: "Martí-Juan, G., Frias, M., Sanz, P., Alba-Arbalat, S., Vidal-Jordana, A., Sastre-Garriga, J., Montalban, X., Piella, G., Rovira, A., Llufriu, S., Prados, F."
+    venue: "NeuroImage: Clinical"
+    details: "36, 103187"
+    year: 2022
+    type: journal
+    topic: multiple-sclerosis
+    doi: "10.1016/j.nicl.2022.103187"
+
+  - title: "Nonlinear interaction between APOE ε4 allele load and age in the hippocampal surface of cognitively intact individuals"
+    authors: "Martí-Juan, G., Sanroma-Guell, G., Cacciaglia, R., Falcon, C., Operto, G., Molinuevo, J.L., Gonzalez Ballester, M.A., Piella, G., and the ALFA Study"
+    venue: "Human Brain Mapping"
+    details: "41(17), 5062-5076"
+    year: 2020
+    type: journal
+    topic: alzheimers
+    doi: "10.1002/hbm.25202"
+
+  - title: "Revealing heterogeneity of brain imaging phenotypes in Alzheimer's disease based on unsupervised clustering of blood marker profiles"
+    authors: "Martí-Juan, G., Sanroma, G., Piella, G."
+    venue: "PLoS ONE"
+    details: "14(3), e0211121"
+    year: 2019
+    type: journal
+    topic: alzheimers
+    doi: "10.1371/journal.pone.0211121"
+
+  - title: "Towards large scale multimedia indexing: A case study on person discovery in broadcast news"
+    authors: "Le, N., Bredin, H., Sargent, G., India, M., Lopez-Otero, P., Barras, C., Guinaudeau, C., Gravier, G., Barbosa da Fonseca, G., Lyon Freire, I., Patrocínio Jr., Z., Guimarães, S.J.F., Martí, G., Morros, J.R., Hernando, J., Docio-Fernandez, L., Garcia-Mateo, C., Meignier, S., Odobez, J.-M."
+    venue: "Proceedings of the 15th International Workshop on Content-Based Multimedia Indexing (CBMI '17)"
+    details: "Article 18, 6 pages"
+    year: 2017
+    type: conference
+    topic: multimedia
+    doi: "10.1145/3095713.3095732"
+
+  - title: "UPC System for the 2016 MediaEval Multimodal Person Discovery in Broadcast TV task"
+    authors: "India, M., Martí, G., Cotillas, C., Bouritsas, G., Sayrol, E., Morros, J.R., et al."
+    venue: "MediaEval 2016 Workshop, Hilversum, The Netherlands"
+    year: 2016
+    type: conference
+    topic: multimedia
+    url: "https://upcommons.upc.edu/handle/2117/101709"
+    url_label: "UPCommons"

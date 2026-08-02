@@ -13,10 +13,23 @@ Personal website, research notes, projects, and blog posts. The site is built wi
 - Add a post under <code>_posts/</code> using <code>YYYY-MM-DD-title.md</code> and Jekyll front matter.
 - Keep unfinished posts in <code>_drafts/</code> until they are ready.
 - Update the profile and CV in <code>blog/about.md</code> and <code>blog/cv.md</code>.
-- Add public CV files under <code>assets/cv/</code> and link them from the CV page.
-- Add project pages under <code>_projects/</code>; the collection is listed at <code>/projects/</code>.
-- Keep a short current snapshot in <code>blog/now.md</code>.
-- Add navigation items in <code>_data/navigation.yml</code>.
+- Add navigation items in <code>_data/navigation.yml</code>. The nav is deliberately short; <code>/lab/</code> is unlisted.
+- Project pages still work from <code>_projects/</code> (permalink <code>/projects/:name/</code>), but there is no index page linking them.
+
+### Publications
+
+<code>_data/publications.yml</code> is the single source: <code>blog/publications.md</code> renders the list from it and <code>assets/data/publications-vega.json</code> builds the timeline chart from the same entries, so the two cannot drift apart.
+
+To refresh from Google Scholar (which has no API and blocks scripted access), export BibTeX from the profile and convert it:
+
+    python3 scripts/import_bibtex.py citations.bib --merge _data/publications.yml > /tmp/pubs.yml
+    mv /tmp/pubs.yml _data/publications.yml
+
+<code>--merge</code> carries over the <code>topic:</code> values, which BibTeX does not contain and which colour the chart.
+
+### Design tokens
+
+Colours, fonts and spacing live as CSS custom properties in <code>_sass/_tokens.scss</code>. <code>_sass/_darkmode.scss</code> overrides only those values — if something does not respond to the theme, fix the component to read a <code>var(--…)</code> rather than adding a dark-mode rule.
 
 ## Rich posts
 

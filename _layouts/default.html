@@ -2,13 +2,33 @@
 <html lang="{{ site.lang | default: 'en' }}">
   <head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    {%- comment -%}
+      Resolve the theme before first paint. This used to run at the end of
+      <body>, which meant dark-mode users got a flash of the light theme on
+      every cold load.
+    {%- endcomment -%}
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var dark = stored
+            ? stored === 'dark'
+            : window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) { document.documentElement.setAttribute('data-theme', 'dark'); }
+        } catch (e) { /* storage blocked — fall back to light */ }
+      })();
+    </script>
+
     {% include meta.html %}
 
+    <link rel="preload" href="{{ '/assets/fonts/newsreader-latin-wght-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" type="text/css" href="{{ '/assets/style.css' | relative_url }}" />
-    <link rel="alternate" type="application/atom+xml" title="{{ site.name }} - {{ site.description }}" href="{{ '/atom.xml' | relative_url }}" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} feed" href="{{ '/feed.xml' | relative_url }}" />
+    <link rel="alternate" type="application/atom+xml" title="{{ site.name }} feed" href="{{ '/feed.xml' | relative_url }}" />
 
-    <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}" type="image/x-icon">
+    <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}" sizes="32x32">
+    <link rel="icon" href="{{ '/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
 
     {% if page.cv %}
       <link href="{{ '/media/academicons.min.css' | relative_url }}" rel="stylesheet">
@@ -27,24 +47,38 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="wrapper-masthead">
       <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ '/' | relative_url }}" class="site-avatar"><img src="{{ site.avatar | relative_url }}" alt="{{ site.name }}" /></a>
+        <header class="masthead">
+          {%- comment -%}
+            A wordmark, not a second introduction — the homepage hero owns the
+            avatar and the tagline. This is a <p> so every page has exactly one <h1>.
+          {%- endcomment -%}
+          <p class="site-name"><a href="{{ '/' | relative_url }}">{{ site.name }}</a></p>
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ '/' | relative_url }}">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
+          <div class="masthead-right">
+            <nav class="primary-nav" aria-label="Primary navigation">
+              {% for item in site.data.navigation %}
+                <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+              {% endfor %}
+            </nav>
+
+            {%- comment -%}
+              Inline in the masthead rather than fixed bottom-right, so it sits
+              in a sensible place in the tab order instead of dead last.
+            {%- endcomment -%}
+            <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme" aria-pressed="false">
+              <svg id="moon-icon" class="theme-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+              </svg>
+              <svg id="sun-icon" class="theme-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" focusable="false" style="display:none;">
+                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+              </svg>
+            </button>
           </div>
-
-          <nav class="primary-nav" aria-label="Primary navigation">
-            {% for item in site.data.navigation %}
-              <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
-            {% endfor %}
-          </nav>
         </header>
       </div>
     </div>
 
-    <main id="main" role="main" class="container" tabindex="-1">
+    <main id="main" class="container" tabindex="-1">
       {{ content }}
     </main>
 
@@ -52,6 +86,11 @@
       <div class="container">
         <footer class="footer">
           {% include svg-icons.html %}
+          <p class="footer-note">
+            &copy; {{ 'now' | date: "%Y" }} {{ site.author.name }} &middot; Built with
+            <a href="https://jekyllrb.com/">Jekyll</a>, no trackers &middot;
+            <a href="{{ '/about/' | relative_url }}#colophon">Colophon</a>
+          </p>
         </footer>
       </div>
     </div>
