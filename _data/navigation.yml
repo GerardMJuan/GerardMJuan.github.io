@@ -1,5 +1,11 @@
 - title: Blog
   url: /
+- title: Projects
+  url: /projects/
+- title: Now
+  url: /now/
+- title: Lab
+  url: /lab/
 - title: Tags
   url: /blog/tags/
 - title: CV

@@ -35,6 +35,9 @@ jobs:
           source: ./
           destination: ./_site
 
+      - name: Validate source and generated site
+        run: python scripts/validate_site.py --site ./_site
+
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v4

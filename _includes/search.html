@@ -1,7 +1,8 @@
 <!-- Search Box -->
 <div class="search-container">
-  <input type="text" id="search-input" placeholder="Search posts..." />
-  <ul id="results-container"></ul>
+  <label class="visually-hidden" for="search-input">Search posts</label>
+  <input type="search" id="search-input" placeholder="Search posts..." autocomplete="off" aria-controls="results-container" />
+  <ul id="results-container" aria-live="polite"></ul>
 </div>
 
 <!-- Simple-Jekyll-Search - Lazy loaded on first interaction -->
@@ -23,7 +24,7 @@
         SimpleJekyllSearch({
           searchInput: searchInput,
           resultsContainer: document.getElementById('results-container'),
-          json: '{{ site.baseurl }}/search.json',
+          json: '{{ '/search.json' | relative_url }}',
           searchResultTemplate: '<li><a href="{url}">{title}</a><br><small>{date} - {excerpt}</small></li>',
           noResultsText: 'No results found',
           limit: 10,

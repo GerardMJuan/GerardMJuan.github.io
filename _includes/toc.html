@@ -1,7 +1,7 @@
 <!-- Table of Contents (auto-generated for posts > 500 words) -->
 <div id="toc-container" class="toc-container">
   <h3 class="toc-title">Table of Contents</h3>
-  <nav id="toc" class="toc"></nav>
+  <nav id="toc" class="toc" aria-label="On this page"></nav>
 </div>
 
 <script>
@@ -32,7 +32,8 @@
           a.textContent = heading.textContent;
           a.onclick = function(e) {
             e.preventDefault();
-            heading.scrollIntoView({ behavior: 'smooth' });
+            const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            heading.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
             // Use history.replaceState to avoid double jump from hash change
             if (history.replaceState) {
               history.replaceState(null, null, '#' + heading.id);

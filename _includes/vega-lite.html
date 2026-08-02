@@ -1,0 +1,9 @@
+{% assign chart_id = include.id | default: 'vega-chart' %}
+{% assign chart_label = include.label | default: 'Interactive Vega-Lite chart' %}
+<div id="{{ chart_id }}" class="interactive-chart" data-vega-spec="{{ include.spec | relative_url }}" role="region" aria-label="{{ chart_label | escape }}">
+  <p class="chart-status" data-chart-status aria-live="polite">Loading interactive chart…</p>
+  <p class="chart-fallback">Source data: <a href="{{ include.spec | relative_url }}">open the chart data</a>.</p>
+</div>
+<noscript>
+  <p class="chart-fallback">JavaScript is required for this interactive chart. <a href="{{ include.spec | relative_url }}">Open the chart data</a>.</p>
+</noscript>

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "A small example showing how a local Vega-Lite specification can be embedded.",
+  "width": "container",
+  "height": 260,
+  "data": {
+    "values": [
+      {"month": "Jan", "posts": 1},
+      {"month": "Feb", "posts": 2},
+      {"month": "Mar", "posts": 3},
+      {"month": "Apr", "posts": 2},
+      {"month": "May", "posts": 4}
+    ]
+  },
+  "mark": {"type": "bar", "cornerRadiusTopLeft": 4, "cornerRadiusTopRight": 4},
+  "encoding": {
+    "x": {"field": "month", "type": "ordinal", "title": null},
+    "y": {"field": "posts", "type": "quantitative", "title": "Posts"},
+    "tooltip": [
+      {"field": "month", "type": "ordinal", "title": "Month"},
+      {"field": "posts", "type": "quantitative", "title": "Posts"}
+    ]
+  }
+}

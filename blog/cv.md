@@ -11,14 +11,14 @@ PhD Candidate. Machine learning, neurodegenerative diseases.
 <div id="webaddress">
 <a href="mailto:gerard.marti@upf.edu">gerard.marti@upf.edu</a>
 |
-<i class="fa fa-github"></i> <a href="http://github.com/GerardMJuan">GerardMJuan</a>
+<i class="fa fa-github"></i> <a href="https://github.com/GerardMJuan">GerardMJuan</a>
 |
-<i class="fa fa-twitter"></i> <a href="http://twitter.com/GerardMJuan">GerardMJuan</a>
+<i class="fa fa-twitter"></i> <a href="https://twitter.com/GerardMJuan">GerardMJuan</a>
 </div>
 
 ## Currently
 
-I'm a third year PhD candidate at [Universitat Pompeu Fabra](upf.edu), at the [SIMBIOsys](https://www.upf.edu/web/simbiosys/) research group. My research is focused on applying machine learning, data science and statistical methods to study Alzheimer's Disease, integrating heterogeneous, longitudinal medical data.
+I'm a third year PhD candidate at [Universitat Pompeu Fabra](https://www.upf.edu/), at the [SIMBIOsys](https://www.upf.edu/web/simbiosys/) research group. My research is focused on applying machine learning, data science and statistical methods to study Alzheimer's Disease, integrating heterogeneous, longitudinal medical data.
 
 ## Employment
 
@@ -130,15 +130,15 @@ India M, __Martí G__, Cotillas C, Bouritsas G, Sayrol E, Morros JR, _et al_. UP
 
 ## Projects
 
-I have a [personal GitHub account](https://github.com/GerardMJuan) where I post project, code and implementations of interesting papers and projects relevant to my research. I also try to maintain a small blog at [gerardmjuan.github.io](http://gerardmjuan.github.io), with introduction to side-projects, solutions to problems I run across during my PhD, and general coding tips.
+I have a [personal GitHub account](https://github.com/GerardMJuan) where I post project, code and implementations of interesting papers and projects relevant to my research. I also try to maintain a small blog at [gerardmjuan.github.io](https://gerardmjuan.github.io), with introduction to side-projects, solutions to problems I run across during my PhD, and general coding tips.
 
 ## Links
 <!-- fa are fontawesome, ai are academicons -->
 * <i class="fa fa-envelope"></i> <a href="mailto:gerard.marti@upf.edu">Email</a><br />
-* <i class="fa fa-github"></i> <a href="http://github.com/GerardMJuan">GerardMJuan</a><br />
-* <i class="fa fa-twitter"></i> <a href="http://twitter.com/GerardMJuan">GerardMJuan</a><br />
+* <i class="fa fa-github"></i> <a href="https://github.com/GerardMJuan">GerardMJuan</a><br />
+* <i class="fa fa-twitter"></i> <a href="https://twitter.com/GerardMJuan">GerardMJuan</a><br />
 * <i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/gerardmjuan/">LinkedIn</a>
-* <i class="fa fa-stack-overflow"></i> <a href="http://stackoverflow.com/users/95863/gerard-marti">StackOverflow</a>
+* <i class="fa fa-stack-overflow"></i> <a href="https://stackoverflow.com/users/95863/gerard-marti">StackOverflow</a>
 * <i class="ai ai-google-scholar"></i> <a href="https://scholar.google.com/citations?user=9Qzpt7kAAAAJ">Google scholar</a>
 * <i class="ai ai-orcid"></i> <a href="https://orcid.org/0000-0003-4729-7182">ORCiD</a>
 

@@ -5,20 +5,26 @@
     {% include meta.html %}
 
     <link rel="stylesheet" type="text/css" href="{{ '/assets/style.css' | relative_url }}" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ '/atom.xml' | relative_url }}" />
+    <link rel="alternate" type="application/atom+xml" title="{{ site.name }} - {{ site.description }}" href="{{ '/atom.xml' | relative_url }}" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} feed" href="{{ '/feed.xml' | relative_url }}" />
 
     <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}" type="image/x-icon">
 
     {% if page.cv %}
       <link href="{{ '/media/academicons.min.css' | relative_url }}" rel="stylesheet">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous">
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
     {% endif %}
+
+    {% include capabilities.html %}
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
 
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
@@ -29,7 +35,7 @@
             <p class="site-description">{{ site.description }}</p>
           </div>
 
-          <nav aria-label="Primary navigation">
+          <nav class="primary-nav" aria-label="Primary navigation">
             {% for item in site.data.navigation %}
               <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
             {% endfor %}
@@ -38,9 +44,9 @@
       </div>
     </div>
 
-    <div id="main" role="main" class="container">
+    <main id="main" role="main" class="container" tabindex="-1">
       {{ content }}
-    </div>
+    </main>
 
     <div class="wrapper-footer">
       <div class="container">

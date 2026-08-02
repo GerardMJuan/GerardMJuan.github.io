@@ -127,6 +127,44 @@ img {
   max-width: 100%;
 }
 
+button,
+input {
+  font: inherit;
+}
+
+// Keyboard users should always have a visible route to the main content.
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  z-index: 2000;
+  padding: 0.6em 0.9em;
+  background: var(--link-color);
+  color: var(--bg-color);
+  border-radius: 4px;
+
+  &:focus {
+    left: 10px;
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+:focus-visible {
+  outline: 3px solid var(--link-color);
+  outline-offset: 3px;
+}
+
 // Lazy loading images - only hide if not yet loaded
 img[loading="lazy"]:not(.loaded) {
   opacity: 0;
@@ -244,7 +282,11 @@ code {
   }
 }
 
-nav {
+.primary-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75em;
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;
@@ -253,19 +295,20 @@ nav {
   @include mobile {
     float: none;
     margin-top: 9px;
-    display: block;
+    display: flex;
     font-size: 16px;
+    justify-content: center;
   }
 
   a {
-    margin-left: 20px;
+    margin-left: 0;
     color: $darkGray;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
 
     @include mobile {
-      margin: 0 10px;
+      margin: 0;
       color: $blue;
     }
   }
@@ -274,6 +317,134 @@ nav {
 //
 // .main
 //
+
+.page-intro {
+  margin-bottom: 2em;
+}
+
+.empty-state {
+  padding: 1em;
+  border: 1px dashed var(--border-color);
+  color: var(--text-color-light);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1em;
+  margin: 1.5em 0;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25em;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--footer-bg);
+
+  h2 {
+    margin-top: 0;
+    font-size: 1.35em;
+  }
+
+  p {
+    flex: 1;
+  }
+}
+
+.project-kicker {
+  margin: 0 0 0.35em;
+  color: var(--text-color-light);
+  font-size: 0.8em;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-entry {
+  .project-header {
+    margin-bottom: 2em;
+  }
+
+  .project-description {
+    color: var(--text-color-light);
+    font-size: 1.1em;
+  }
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  float: none;
+  gap: 0.75em;
+  margin: 2em 0;
+
+  a {
+    padding: 0.45em 0.8em;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+  }
+}
+
+.now-section {
+  padding: 1em 0;
+  border-top: 1px solid var(--border-color);
+
+  h2 {
+    margin-top: 0;
+  }
+}
+
+.interactive-chart,
+.mermaid-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 290px;
+  margin: 1.5em 0;
+  padding: 1em;
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-color);
+}
+
+.interactive-chart {
+  .chart-status {
+    margin: 0;
+    color: var(--text-color-light);
+    font-size: 0.9em;
+  }
+
+  .chart-status-error {
+    color: #a33;
+  }
+
+  .vega-embed,
+  .plot-container {
+    max-width: 100%;
+  }
+}
+
+.chart-fallback {
+  color: var(--text-color-light);
+  font-size: 0.9em;
+}
+
+.mermaid-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mermaid {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    text-align: center;
+  }
+}
 
 .posts > .post {
   padding-bottom: 2em;
@@ -329,6 +500,17 @@ nav {
 footer {
   padding: 20px 0;
   text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

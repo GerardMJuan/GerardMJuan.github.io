@@ -10,6 +10,7 @@ avatar: /images/profile.jpg
 author:
   name: Gerard Martí
   url: https://gerardmjuan.github.io
+  email: gerard.marti@upf.edu
 
 footer-links:
   dribbble:
@@ -20,7 +21,7 @@ footer-links:
   instagram:
   linkedin:
   pinterest:
-  rss: # just type anything here for a working RSS icon
+  rss: true
   twitter: gerardmjuan
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
@@ -51,8 +52,14 @@ tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 
 plugins:
+  - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
 
 exclude:
   - _drafts
@@ -63,8 +70,10 @@ exclude:
   - .bundle
   - node_modules
   - .vscode
+  - scripts
 
-mathjax: true
+# Opt into browser-side math rendering per page with math: true.
+mathjax: false
 
 font-awesome:
   assets: true

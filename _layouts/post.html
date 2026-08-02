@@ -18,7 +18,7 @@ layout: default
   {% if page.tags %}
   <div class="post-tags">
   {% for tag in page.tags %}
-    <a href="{{ site.baseurl }}{{ site.tag_page }}#{{ tag | slugify }}" class="post-tag">{{tag}}</a>
+    <a href="{{ site.tag_page | relative_url }}#{{ tag | slugify }}" class="post-tag">{{tag}}</a>
   {% endfor %}
   </div>
   {% endif %}
@@ -36,7 +36,7 @@ layout: default
     {% for post in site.related_posts limit:3 %}
       <li>
         <h3>
-          <a href="{{ site.baseurl }}{{ post.url }}">
+          <a href="{{ post.url | relative_url }}">
             {{ post.title }} - <small>{{ post.date | date_to_string }}</small>
           </a>
         </h3>
