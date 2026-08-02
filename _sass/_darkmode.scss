@@ -7,10 +7,10 @@
   --bg-color: #fff;
   --text-color: #333;
   --text-color-light: #666;
-  --text-color-lighter: #222;
-  --link-color: #4183C4;
-  --border-color: #eee;
-  --footer-bg: #eee;
+  --text-color-lighter: #1a1a1a;
+  --link-color: #2563eb;
+  --border-color: #f3f4f6;
+  --footer-bg: #f3f4f6;
   --code-color: #aaa;
   --selection-bg: #eee;
   --selection-text: #000;
@@ -89,6 +89,42 @@ a {
 
 code {
   color: var(--code-color);
+}
+
+// Hero section dark mode
+.hero {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero-title {
+  color: var(--text-color-lighter);
+}
+
+.hero-subtitle {
+  color: var(--text-color-light);
+}
+
+.hero-description {
+  color: var(--text-color);
+}
+
+.btn-primary {
+  background-color: var(--link-color);
+
+  &:hover {
+    background-color: var(--link-color);
+    opacity: 0.9;
+  }
+}
+
+.btn-secondary {
+  color: var(--link-color);
+  border-color: var(--link-color);
+
+  &:hover {
+    background-color: var(--link-color);
+    color: var(--bg-color);
+  }
 }
 
 ::-moz-selection {

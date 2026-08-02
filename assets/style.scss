@@ -513,6 +513,113 @@ footer {
   }
 }
 
+//
+// Hero Section
+//
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid $lightGray;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: $darkerGray;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: $gray;
+  margin: 0 0 1rem 0;
+  font-weight: 400;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: $darkGray;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: $blue;
+  color: $white;
+
+  &:hover {
+    background-color: darken($blue, 10%);
+    color: $white;
+  }
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: $blue;
+  border: 2px solid $blue;
+
+  &:hover {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+.posts-header {
+  margin-top: 0;
+  padding-top: 1rem;
+}
+
+@include mobile {
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";

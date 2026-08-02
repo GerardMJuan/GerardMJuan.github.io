@@ -3,7 +3,25 @@ layout: default
 permalink:
 ---
 
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <img src="{{ site.avatar }}" alt="Gerard Martí Juan" class="hero-avatar" />
+    <h1 class="hero-title">Gerard Martí Juan, Ph.D.</h1>
+    <p class="hero-subtitle">Senior AI Researcher | Medical Imaging & Machine Learning</p>
+    <p class="hero-description">
+      Building AI solutions for healthcare at <a href="https://eden.ai">Eden</a> and conducting research in medical imaging at <a href="https://www.upf.edu/web/bcn-medtech">UPF BCN Medtech</a>. Focused on brain MRI analysis, deep learning, and clinical decision support systems.
+    </p>
+    <div class="hero-cta">
+      <a href="{{ site.baseurl }}/cv/" class="btn btn-primary">View CV</a>
+      <a href="{{ site.baseurl }}/publications/" class="btn btn-secondary">Publications</a>
+    </div>
+  </div>
+</section>
+
 {% include search.html %}
+
+<h2 id="posts" class="posts-header">Recent Posts</h2>
 
 <div class="posts">
   {% for post in site.posts %}

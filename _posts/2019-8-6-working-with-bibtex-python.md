@@ -44,17 +44,3 @@ print(ent.to_bib())
 ```
 
 With this library, my problem was solved in a mere 10 minutes, without errors nor incomptabilities. Give it a try if you need to deal with BibTeX files in Python!
-
-By the way, I keep updating the site with some funcionalities when I have some free time. I will put the changelog here, until I have a proper page to add it.
-
-*Changelog:*
-
-- Added commentaries to the blog pages.
-- Added new icon to the site.
-
-*To do soon:*
-
-- Add keyword categories in each blog entry.
-- Fix "about me".
-- Create a section of the changelog of the site.
-- Create an archive of all the entries of the blog.

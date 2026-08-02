@@ -11,3 +11,6 @@ package.json
 .vscode/
 __pycache__/
 *.py[cod]
+Gemfile.lock
+CV Base.docx
+CV Base.pdf
