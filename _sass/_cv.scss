@@ -1,0 +1,75 @@
+//
+// CV
+//
+// Screen styles for /cv/. The page is plain Markdown, so most of this is
+// tightening the default document rhythm into something that reads like a CV.
+//
+
+#content {
+  h1 {
+    margin-bottom: 0.15em;
+  }
+
+  // The subtitle line directly under the name.
+  h1 + p {
+    margin-top: 0;
+    color: var(--text-color-light);
+    font-size: 1.05rem;
+  }
+
+  h2 {
+    margin-top: 1.8em;
+    padding-bottom: 0.25em;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  // `Aug 2025 - Present` date markers, written as inline code in the Markdown.
+  code {
+    display: inline-block;
+    margin-right: 0.5em;
+    padding: 0.1em 0.5em;
+    border-radius: var(--radius);
+    background: var(--accent-subtle);
+    color: var(--accent);
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  ul {
+    margin-top: 0.4em;
+  }
+}
+
+#webaddress {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em 1.25em;
+  margin: 0.9em 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.cv-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  color: var(--text-color-light);
+}
+
+.cv-icon {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  color: var(--text-color-light);
+}

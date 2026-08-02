@@ -1,0 +1,157 @@
+//
+// PRINT
+//
+// Applies to every page, but exists mainly so Cmd-P on /cv/ produces a clean
+// document. The repo used to carry media/cv-print.css, which was never linked
+// from anywhere, targeted the old theme's markup, and pulled a webfont from a
+// dead CDN. This replaces it.
+//
+// Colours are forced to black-on-white regardless of data-theme — otherwise
+// printing while in dark mode gives light grey text on paper.
+//
+
+@media print {
+  @page {
+    margin: 1.6cm 1.5cm;
+  }
+
+  :root,
+  [data-theme="dark"] {
+    --bg-color: #fff;
+    --bg-subtle: #fff;
+    --footer-bg: #fff;
+    --text-color: #000;
+    --text-color-light: #333;
+    --text-color-lighter: #000;
+    --accent: #000;
+    --accent-hover: #000;
+    --accent-subtle: transparent;
+    --border-color: #bbb;
+    --border-strong: #999;
+    --code-bg: transparent;
+    --code-color: #000;
+    --shadow: none;
+  }
+
+  html {
+    font-size: 10pt;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    line-height: 1.35;
+  }
+
+  p {
+    margin: 0.5em 0;
+  }
+
+  // Site chrome has no business on paper.
+  .wrapper-masthead,
+  .wrapper-footer,
+  .theme-toggle,
+  .skip-link,
+  .search-container,
+  .post-tags,
+  .toc,
+  .code-copy-button,
+  .interactive-chart,
+  .mermaid-wrapper,
+  .chart-fallback,
+  .hero-cta,
+  .read-more,
+  .related {
+    display: none !important;
+  }
+
+  .container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .entry,
+  .hero-content,
+  .page-intro p {
+    max-width: none;
+  }
+
+  // Links: keep them readable rather than blue-and-underlined, and do not
+  // expand href values inline — this CV is dense with DOI links and printing
+  // every URL would double its length.
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  h1, h2, h3, h4 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  h1 {
+    font-size: 19pt;
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: 12pt;
+    margin-top: 1.2em;
+    margin-bottom: 0.3em;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid #bbb;
+  }
+
+  h3 {
+    font-size: 11pt;
+  }
+
+  li {
+    margin: 0.15em 0;
+  }
+
+  li,
+  blockquote,
+  .pub-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  //
+  // CV specifics
+  //
+
+  #content {
+    // The date chips read as code on screen; on paper they are just small caps.
+    code {
+      padding: 0;
+      background: none;
+      color: #000;
+      font-family: var(--font-sans);
+      font-size: 8.5pt;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    ul {
+      margin-top: 0.35em;
+      margin-bottom: 0.9em;
+    }
+  }
+
+  #webaddress {
+    .cv-icon {
+      // Icons survive printing (they are currentColor SVG), but at 11pt the
+      // text alone is clearer and cheaper in ink.
+      display: none;
+    }
+
+    .cv-contact:not(:last-child):after {
+      content: " · ";
+    }
+  }
+}

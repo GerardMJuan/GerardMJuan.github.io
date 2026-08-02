@@ -9,11 +9,11 @@ cv: true
 Senior AI Researcher | Medical Imaging & Machine Learning
 
 <div id="webaddress">
-<a href="mailto:gerardmartijuan@gmail.com">gerardmartijuan@gmail.com</a>
-|
-<i class="fa fa-github"></i> <a href="https://github.com/GerardMJuan">GerardMJuan</a>
-|
-<i class="fa fa-linkedin"></i> <a href="https://linkedin.com/in/gerardmjuan">LinkedIn</a>
+<span class="cv-contact">{% include icon.html name="email" class="cv-icon" %} <a href="mailto:gerardmartijuan@gmail.com">gerardmartijuan@gmail.com</a></span>
+<span class="cv-contact">{% include icon.html name="github" class="cv-icon" %} <a href="https://github.com/GerardMJuan">GerardMJuan</a></span>
+<span class="cv-contact">{% include icon.html name="linkedin" class="cv-icon" %} <a href="https://linkedin.com/in/gerardmjuan">LinkedIn</a></span>
+<span class="cv-contact">{% include icon.html name="scholar" class="cv-icon" %} <a href="https://scholar.google.com/citations?user=9Qzpt7kAAAAJ">Google Scholar</a></span>
+<span class="cv-contact">{% include icon.html name="orcid" class="cv-icon" %} <a href="https://orcid.org/0000-0003-4729-7182">ORCiD</a></span>
 </div>
 
 ## Summary
@@ -96,10 +96,5 @@ See my [Publications](/publications/) page for a complete list.
 **Languages**
 - English (Fluent), Spanish (Native), Catalan (Native)
 
-## Links
-
-* <i class="fa fa-envelope"></i> <a href="mailto:gerardmartijuan@gmail.com">Email</a><br />
-* <i class="fa fa-github"></i> <a href="https://github.com/GerardMJuan">GitHub</a><br />
-* <i class="fa fa-linkedin"></i> <a href="https://linkedin.com/in/gerardmjuan">LinkedIn</a>
-* <i class="ai ai-google-scholar"></i> <a href="https://scholar.google.com/citations?user=9Qzpt7kAAAAJ">Google Scholar</a>
-* <i class="ai ai-orcid"></i> <a href="https://orcid.org/0000-0003-4729-7182">ORCiD</a>
+<!-- The old "Links" section that lived here listed the same five contacts as
+     the header block, which now carries all of them. Removed as a duplicate. -->

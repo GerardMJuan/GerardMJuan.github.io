@@ -30,14 +30,16 @@
     <link rel="icon" href="{{ '/images/favicon.svg' | relative_url }}" type="image/svg+xml">
     <link rel="apple-touch-icon" href="{{ '/images/apple-touch-icon.png' | relative_url }}">
 
-    {% if page.cv %}
-      <link href="{{ '/media/academicons.min.css' | relative_url }}" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-            crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
-    {% endif %}
+    {%- comment -%}
+      The CV page used to load Font Awesome 4.7 from cdnjs, Open Sans from
+      Google Fonts and a 284 KB academicons webfont, all to draw five contact
+      icons. Those are inline SVG now (see _includes/icon.html).
 
+      Remaining third-party requests, both opt-in rather than site-wide:
+      capabilities.html pulls MathJax/Mermaid/Vega/Plotly from jsDelivr on
+      pages that set the matching front matter, and search.html lazy-loads
+      simple-jekyll-search from unpkg the first time the box is focused.
+    {%- endcomment -%}
     {% include capabilities.html %}
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->

@@ -76,12 +76,16 @@ attribution stays in the page source where it belongs.
 
 A few deliberate choices:
 
-- **No trackers, no analytics, no cookies.** Nothing here knows you visited.
+- **No trackers, no analytics, no cookies.** I have no idea who visits, and I like it
+  that way. Two scripts do still come from a CDN: the search index loads from unpkg
+  the first time you focus the search box, and the pages with charts or equations
+  pull those libraries from jsDelivr. Everything else is served from here.
 - **No JavaScript frameworks.** Dark mode is a set of CSS custom properties plus a
-  handful of lines of vanilla JS; search lazy-loads only once you focus the box.
+  handful of lines of vanilla JS.
 - **Type is [Newsreader](https://github.com/productiontype/Newsreader)**, an
-  open-licence variable serif, self-hosted rather than pulled from Google Fonts —
-  so no third party learns your IP address on the way to reading a sentence.
+  open-licence variable serif, self-hosted rather than pulled from Google Fonts.
+- **Icons are inline SVG.** The CV page used to load Font Awesome, Google Fonts and a
+  284 KB icon webfont to draw five contact links. Now it loads nothing.
 - **[Publications]({{ '/publications/' | relative_url }}) come from one YAML file**
   that renders both the list and the timeline chart above it, so the two cannot
   drift apart.
