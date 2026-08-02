@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ site.lang | default: 'en' }}">
   <head>
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
     {% include meta.html %}
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/atom.xml" />
+    <link rel="stylesheet" type="text/css" href="{{ '/assets/style.css' | relative_url }}" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ '/atom.xml' | relative_url }}" />
 
-      <!-- Favicon head tag -->
-      <link rel="icon" href="{{site.baseurl}}/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ '/images/favicon.ico' | relative_url }}" type="image/x-icon">
+
+    {% if page.cv %}
+      <link href="{{ '/media/academicons.min.css' | relative_url }}" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
+    {% endif %}
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
@@ -17,19 +22,17 @@
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+          <a href="{{ '/' | relative_url }}" class="site-avatar"><img src="{{ site.avatar | relative_url }}" alt="{{ site.name }}" /></a>
 
           <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+            <h1 class="site-name"><a href="{{ '/' | relative_url }}">{{ site.name }}</a></h1>
             <p class="site-description">{{ site.description }}</p>
           </div>
 
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/blog/tags">Tags</a>
-             <!-- <a href="{{ site.baseurl }}/blog/categories">Categories</a> -->
-            <a href="{{ site.baseurl }}/cv">CV</a>
-            <a href="{{ site.baseurl }}/about">About</a>
+          <nav aria-label="Primary navigation">
+            {% for item in site.data.navigation %}
+              <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+            {% endfor %}
           </nav>
         </header>
       </div>

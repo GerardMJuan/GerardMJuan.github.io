@@ -1,13 +1,27 @@
-> March, 2016: If you're on an old version of Jekyll Now and run into a) build warnings or b) syntax highlighting issues caused by [Jekyll 3 and GitHub Pages updates](https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0), just :sparkles:[update your _config.yml](https://github.com/barryclark/jekyll-now/pull/445/files):sparkles: and you'll be set!
+# GerardMJuan.github.io
 
+Personal website, research notes, projects, and blog posts. The site is built with Jekyll and published to GitHub Pages.
 
-Personal website based on Jekyll Now.
+## Work from any device
 
-## Credits on the website format.
-- [Jekyll](https://github.com/jekyll/jekyll) - Thanks to its creators, contributors and maintainers.
-- [SVG icons](https://github.com/neilorangepeel/Free-Social-Icons) - Thanks, Neil Orange Peel. They're beautiful.
-- [Solarized Light Pygments](https://gist.github.com/edwardhotchkiss/2005058) - Thanks, Edward.
-- [Joel Glovier](http://joelglovier.com/writing/) - Great Jekyll articles. I used Joel's feed.xml in this repository.
-- [David Furnes](https://github.com/dfurnes), [Jon Uy](https://github.com/jonuy), [Luke Patton](https://github.com/lkpttn) - Thanks for the design/code reviews.
-- [Bart Kiers](https://github.com/bkiers), [Florian Simon](https://github.com/vermluh), [Henry Stanley](https://github.com/henryaj), [Hun Jae Lee](https://github.com/hunjaelee), [Javier Cejudo](https://github.com/javiercejudo), [Peter Etelej](https://github.com/etelej), [Ben Abbott](https://github.com/jaminscript), [Ray Nicholus](https://github.com/rnicholus), [Erin Grand](https://github.com/eringrand), [Léo Colombaro](https://github.com/LeoColomb), [Dean Attali](https://github.com/daattali), [Clayton Errington](https://github.com/cjerrington), [Colton Fitzgerald](https://github.com/coltonfitzgerald), [Trace Mayer](https://github.com/sunnankar)
-- CV format by [Eliseo Papa](https://github.com/elipapa/markdown-cv)
+- For quick Markdown edits, open the repository in [github.dev](https://github.dev) by pressing `.` on GitHub.
+- For a local preview and a terminal, create a GitHub Codespace. The repository includes a Jekyll dev-container configuration.
+- In the Codespace, run `bundle exec jekyll serve --livereload` and open the forwarded port 4000.
+
+## Content workflow
+
+- Add a post under `_posts/` using `YYYY-MM-DD-title.md` and Jekyll front matter.
+- Keep unfinished posts in `_drafts/` until they are ready.
+- Update the profile and CV in `blog/about.md` and `blog/cv.md`.
+- Add public CV files under `assets/cv/` and link them from the CV page.
+- Add navigation items in `_data/navigation.yml`.
+
+Pull requests build the site but do not publish it. A push to the default branch builds and deploys the site through GitHub Pages. Enable **Settings → Pages → Build and deployment → GitHub Actions** once in the repository settings.
+
+## Local commands
+
+```bash
+bundle install
+bundle exec jekyll serve --livereload
+bundle exec jekyll build
+```

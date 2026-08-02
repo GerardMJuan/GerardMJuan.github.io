@@ -2,6 +2,7 @@
 layout: cv
 title: Gerard Martí's CV
 permalink: /cv/
+cv: true
 
 ---
 # Gerard Martí Juan
